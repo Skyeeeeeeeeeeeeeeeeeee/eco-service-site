@@ -141,38 +141,49 @@ export default function ContactsPage() {
 
             </div>
 
-            {/* MAP */}
-            <div className="bg-white rounded-[40px] overflow-hidden shadow-sm min-h-[500px] relative">
+            {/* MAP CARD */}
+            <div className="bg-white rounded-[40px] overflow-hidden shadow-sm">
 
-              <iframe
-                src="https://widgets.2gis.com/widget?type=firmsonmap&options=eyJwb2ludHMiOlt7ImxhdCI6IjU1LjA0MTE5MSIsImxvbiI6IjgyLjkyMDQzMCIsIm5hbWUiOiLQrdC60L7RgdC10YDQstC40YEifV0sInpvb20iOiIxNyIsImNpdHkiOiJub3Zvc2liaXJzayJ9"
-                width="100%"
-                height="100%"
-                frameBorder="0"
-                className="min-h-[500px]"
-              />
+              <div className="bg-gradient-to-br from-green-500 to-green-700 p-10 md:p-14 text-white min-h-[500px] flex flex-col justify-between">
 
-              <div className="absolute bottom-6 left-6 right-6">
+                <div>
 
-                <a
-                  href="https://2gis.ru/novosibirsk/search/Советская%2064%2F1"
-                  target="_blank"
-                  className="block bg-white/95 backdrop-blur rounded-2xl p-5 shadow-lg hover:bg-white transition"
-                >
-
-                  <p className="text-sm text-gray-500 mb-1">
-                    Адрес офиса
+                  <p className="text-green-100 text-lg mb-4">
+                    Наш офис
                   </p>
 
-                  <p className="font-bold text-lg">
-                    Советская ул., 64/1
+                  <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-8">
+                    Советская
+                    ул., 64/1
+                  </h2>
+
+                  <p className="text-xl text-green-100 leading-relaxed">
+                    Бизнес-центр,
+                    офис 553,
+                    5 этаж
                   </p>
 
-                  <p className="text-green-600 font-medium mt-2">
-                    Открыть в 2ГИС →
-                  </p>
+                </div>
 
-                </a>
+                <div className="space-y-4">
+
+                  <a
+                    href="https://2gis.ru/novosibirsk/search/Советская%2064%2F1"
+                    target="_blank"
+                    className="block bg-white text-green-700 text-center py-5 rounded-2xl text-xl font-bold hover:bg-gray-100 transition"
+                  >
+                    Открыть в 2ГИС
+                  </a>
+
+                  <a
+                    href="https://yandex.ru/maps/?text=Новосибирск%20Советская%2064%2F1"
+                    target="_blank"
+                    className="block border-2 border-white text-white text-center py-5 rounded-2xl text-xl font-bold hover:bg-white hover:text-green-700 transition"
+                  >
+                    Открыть в Яндекс Картах
+                  </a>
+
+                </div>
 
               </div>
 
