@@ -87,7 +87,7 @@ export default function HomePage() {
                 Аренда и продажа биотуалетов
               </p>
 
-              <h1 className="text-6xl md:text-8xl font-bold leading-tight mb-8">
+              <h1 className="text-4xl md:text-7xl font-bold leading-[1.05] mb-8 max-w-3xl">
                 Биотуалеты
                 для стройки,
                 мероприятий
@@ -154,12 +154,12 @@ export default function HomePage() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
-              className="bg-green-100 rounded-[50px] min-h-[600px] flex items-center justify-center relative overflow-hidden"
+              className="bg-green-100 rounded-[50px] min-h-[500px] md:min-h-[600px] flex items-center justify-center relative overflow-hidden"
             >
 
               <div className="absolute inset-0 bg-gradient-to-br from-green-200 to-green-50 opacity-60" />
 
-              <p className="text-green-700 text-5xl font-bold relative z-10">
+              <p className="text-green-700 text-3xl md:text-5xl font-bold relative z-10 text-center px-6">
                 Фото биотуалета
               </p>
 
