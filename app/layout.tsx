@@ -1,20 +1,30 @@
-import "./globals.css";
+import './globals.css'
+import { ThemeProvider } from './providers'
 
 export const metadata = {
-  title: "Экосервис Новосибирск",
-  description: "Аренда и продажа биотуалетов",
-};
+  title: 'Экосервис',
+  description: 'Аренда и обслуживание биотуалетов',
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
+
   return (
     <html lang="ru">
+
       <body>
-        {children}
+
+        <ThemeProvider>
+
+          {children}
+
+        </ThemeProvider>
+
       </body>
+
     </html>
-  );
+  )
 }

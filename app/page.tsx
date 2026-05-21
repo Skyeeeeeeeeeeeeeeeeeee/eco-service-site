@@ -3,11 +3,14 @@
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import { useState } from "react"
+import { useTheme } from "./providers"
 
 export default function HomePage() {
 
   const [isOpen, setIsOpen] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  const { darkMode, toggleTheme } = useTheme()
 
   return (
     <main className="min-h-screen bg-[#f5f5f5] text-slate-900 overflow-hidden">
@@ -63,13 +66,28 @@ export default function HomePage() {
 
           </nav>
 
-          {/* DESKTOP BUTTON */}
-          <button
-            onClick={() => setIsOpen(true)}
-            className="hidden md:block bg-green-600 hover:bg-green-700 hover:scale-105 active:scale-95 text-white px-6 py-3 rounded-2xl font-medium transition duration-300"
-          >
-            Заказать
-          </button>
+          {/* RIGHT BUTTONS */}
+          <div className="hidden md:flex items-center gap-4">
+
+            {/* DARK MODE */}
+            <button
+              onClick={toggleTheme}
+              className="flex items-center justify-center w-12 h-12 rounded-2xl border border-gray-300 hover:scale-105 transition"
+            >
+
+              {darkMode ? '☀️' : '🌙'}
+
+            </button>
+
+            {/* ORDER */}
+            <button
+              onClick={() => setIsOpen(true)}
+              className="bg-green-600 hover:bg-green-700 hover:scale-105 active:scale-95 text-white px-6 py-3 rounded-2xl font-medium transition duration-300"
+            >
+              Заказать
+            </button>
+
+          </div>
 
           {/* MOBILE BURGER */}
           <button
@@ -145,9 +163,23 @@ export default function HomePage() {
 
             </div>
 
-            {/* BUTTON */}
-            <div className="mt-auto p-6">
+            {/* BOTTOM */}
+            <div className="mt-auto p-6 space-y-4">
 
+              {/* DARK MODE */}
+              <button
+                onClick={toggleTheme}
+                className="w-full border border-gray-300 py-4 rounded-2xl text-lg font-semibold"
+              >
+
+                {darkMode
+                  ? '☀️ Светлая тема'
+                  : '🌙 Тёмная тема'
+                }
+
+              </button>
+
+              {/* ORDER */}
               <button
                 onClick={() => {
                   setIsOpen(true)
@@ -472,7 +504,6 @@ export default function HomePage() {
               className="relative bg-white rounded-3xl p-6 md:p-8 w-full max-w-md shadow-2xl"
             >
 
-              {/* CLOSE */}
               <button
                 onClick={() => setIsOpen(false)}
                 className="absolute top-4 right-4 text-3xl text-gray-400 hover:text-black transition"
