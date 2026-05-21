@@ -145,17 +145,17 @@ export default function ContactsPage() {
             <div className="bg-white rounded-[40px] overflow-hidden shadow-sm min-h-[500px] relative">
 
               <iframe
-                src="https://yandex.ru/map-widget/v1/?ll=82.920430%2C55.041191&z=17"
+                src="https://widgets.2gis.com/widget?type=firmsonmap&options=eyJwb2ludHMiOlt7ImxhdCI6IjU1LjA0MTE5MSIsImxvbiI6IjgyLjkyMDQzMCIsIm5hbWUiOiLQrdC60L7RgdC10YDQstC40YEifV0sInpvb20iOiIxNyIsImNpdHkiOiJub3Zvc2liaXJzayJ9"
                 width="100%"
                 height="100%"
-                allowFullScreen={true}
-                className="border-0 min-h-[500px]"
+                frameBorder="0"
+                className="min-h-[500px]"
               />
 
               <div className="absolute bottom-6 left-6 right-6">
 
                 <a
-                  href="https://yandex.ru/maps/?text=Новосибирск%20Советская%2064%2F1"
+                  href="https://2gis.ru/novosibirsk/search/Советская%2064%2F1"
                   target="_blank"
                   className="block bg-white/95 backdrop-blur rounded-2xl p-5 shadow-lg hover:bg-white transition"
                 >
@@ -169,7 +169,7 @@ export default function ContactsPage() {
                   </p>
 
                   <p className="text-green-600 font-medium mt-2">
-                    Открыть в Яндекс Картах →
+                    Открыть в 2ГИС →
                   </p>
 
                 </a>
