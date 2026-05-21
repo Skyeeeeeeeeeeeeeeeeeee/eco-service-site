@@ -1,13 +1,17 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
+import { useState } from "react"
 
 export default function HomePage() {
+
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
     <main className="min-h-screen bg-[#f5f5f5] text-slate-900">
 
       {/* HEADER */}
-      <header className="border-b border-gray-200 bg-white sticky top-0 z-50 backdrop-blur">
+      <header className="border-b border-gray-200 bg-white/90 backdrop-blur sticky top-0 z-50">
 
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
 
@@ -29,28 +33,28 @@ export default function HomePage() {
 
             <a
               href="/"
-              className="text-green-600 font-semibold transition hover:scale-105"
+              className="text-green-600 font-semibold hover:scale-105 transition"
             >
               Главная
             </a>
 
             <a
               href="/services"
-              className="font-medium hover:text-green-600 transition hover:scale-105"
+              className="font-medium hover:text-green-600 hover:scale-105 transition"
             >
               Услуги
             </a>
 
             <a
               href="/prices"
-              className="font-medium hover:text-green-600 transition hover:scale-105"
+              className="font-medium hover:text-green-600 hover:scale-105 transition"
             >
               Цены
             </a>
 
             <a
               href="/contacts"
-              className="font-medium hover:text-green-600 transition hover:scale-105"
+              className="font-medium hover:text-green-600 hover:scale-105 transition"
             >
               Контакты
             </a>
@@ -58,12 +62,12 @@ export default function HomePage() {
           </nav>
 
           {/* BUTTON */}
-          <a
-            href="/contacts"
+          <button
+            onClick={() => setIsOpen(true)}
             className="bg-green-600 hover:bg-green-700 hover:scale-105 active:scale-95 text-white px-6 py-3 rounded-2xl font-medium transition duration-300"
           >
             Заказать
-          </a>
+          </button>
 
         </div>
 
@@ -101,14 +105,15 @@ export default function HomePage() {
                 по Новосибирску и области.
               </p>
 
+              {/* BUTTONS */}
               <div className="flex flex-col sm:flex-row gap-5 mb-14">
 
-                <a
-                  href="/contacts"
-                  className="bg-green-600 hover:bg-green-700 hover:scale-105 active:scale-95 text-white px-8 py-5 rounded-2xl text-lg font-semibold transition duration-300 text-center"
+                <button
+                  onClick={() => setIsOpen(true)}
+                  className="bg-green-600 hover:bg-green-700 hover:scale-105 active:scale-95 text-white px-8 py-5 rounded-2xl text-lg font-semibold transition duration-300"
                 >
                   Оставить заявку
-                </a>
+                </button>
 
                 <a
                   href="/services"
@@ -262,18 +267,91 @@ export default function HomePage() {
               для вашего объекта.
             </p>
 
-            <a
-              href="/contacts"
-              className="inline-block bg-white text-green-700 hover:bg-gray-100 hover:scale-105 active:scale-95 px-10 py-5 rounded-2xl text-2xl font-bold transition duration-300"
+            <button
+              onClick={() => setIsOpen(true)}
+              className="bg-white text-green-700 hover:bg-gray-100 hover:scale-105 active:scale-95 px-10 py-5 rounded-2xl text-2xl font-bold transition duration-300"
             >
               Оставить заявку
-            </a>
+            </button>
 
           </motion.div>
 
         </div>
 
       </section>
+
+      {/* MODAL */}
+      <AnimatePresence>
+
+        {isOpen && (
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm flex items-center justify-center px-4"
+          >
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.85, y: 40 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.85 }}
+              transition={{ duration: 0.25 }}
+              className="bg-white rounded-[40px] w-full max-w-2xl p-8 md:p-12 relative shadow-2xl"
+            >
+
+              {/* CLOSE */}
+              <button
+                onClick={() => setIsOpen(false)}
+                className="absolute top-6 right-6 text-3xl text-gray-400 hover:text-black transition"
+              >
+                ×
+              </button>
+
+              <h2 className="text-4xl md:text-5xl font-bold mb-5">
+                Оставить заявку
+              </h2>
+
+              <p className="text-gray-600 text-lg mb-10">
+                Заполните форму и мы свяжемся с вами.
+              </p>
+
+              <form className="space-y-5">
+
+                <input
+                  type="text"
+                  placeholder="Ваше имя"
+                  className="w-full border border-gray-300 rounded-2xl px-6 py-5 text-lg outline-none focus:border-green-600"
+                />
+
+                <input
+                  type="tel"
+                  placeholder="Телефон"
+                  className="w-full border border-gray-300 rounded-2xl px-6 py-5 text-lg outline-none focus:border-green-600"
+                />
+
+                <textarea
+                  placeholder="Комментарий"
+                  rows={4}
+                  className="w-full border border-gray-300 rounded-2xl px-6 py-5 text-lg outline-none focus:border-green-600"
+                />
+
+                <button
+                  type="submit"
+                  className="w-full bg-green-600 hover:bg-green-700 hover:scale-[1.01] text-white py-5 rounded-2xl text-lg font-bold transition"
+                >
+                  Отправить заявку
+                </button>
+
+              </form>
+
+            </motion.div>
+
+          </motion.div>
+
+        )}
+
+      </AnimatePresence>
 
       {/* FOOTER */}
       <footer className="bg-slate-950 text-white py-16">
