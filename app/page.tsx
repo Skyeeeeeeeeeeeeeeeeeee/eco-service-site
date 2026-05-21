@@ -1,4 +1,11 @@
+"use client"
+
+import { useState } from "react"
+
 export default function HomePage() {
+
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
     <main className="min-h-screen bg-[#f5f5f5] text-slate-900">
 
@@ -52,12 +59,12 @@ export default function HomePage() {
           </nav>
 
           {/* BUTTON */}
-          <a
-            href="#request"
+          <button
+            onClick={() => setIsOpen(true)}
             className="bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-2xl font-medium transition text-sm md:text-base"
           >
             Заказать
-          </a>
+          </button>
 
         </div>
 
@@ -126,12 +133,12 @@ export default function HomePage() {
               {/* BUTTONS */}
               <div className="flex flex-col sm:flex-row gap-4">
 
-                <a
-                  href="#request"
+                <button
+                  onClick={() => setIsOpen(true)}
                   className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-2xl font-medium transition text-center"
                 >
                   Оставить заявку
-                </a>
+                </button>
 
                 <a
                   href="/services"
@@ -292,12 +299,12 @@ export default function HomePage() {
               для вашего объекта.
             </p>
 
-            <a
-              href="#request"
+            <button
+              onClick={() => setIsOpen(true)}
               className="inline-block bg-white text-green-700 px-10 py-5 rounded-2xl text-lg font-bold hover:bg-gray-100 transition"
             >
               Оставить заявку
-            </a>
+            </button>
 
           </div>
 
@@ -305,59 +312,63 @@ export default function HomePage() {
 
       </section>
 
-      {/* REQUEST FORM */}
-      <section
-        id="request"
-        className="pb-16 md:pb-24"
-      >
+      {/* MODAL */}
+      {
+        isOpen && (
+          <div className="fixed inset-0 bg-black/60 z-[100] flex items-center justify-center p-4">
 
-        <div className="max-w-5xl mx-auto px-4 md:px-6">
+            <div className="bg-white rounded-[40px] w-full max-w-2xl p-8 md:p-12 relative">
 
-          <div className="bg-white rounded-[40px] p-8 md:p-14 shadow-sm">
-
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              Оставить заявку
-            </h2>
-
-            <p className="text-xl text-gray-600 mb-10">
-              Заполните форму и мы свяжемся с вами
-              в ближайшее время.
-            </p>
-
-            <form className="space-y-6">
-
-              <input
-                type="text"
-                placeholder="Ваше имя"
-                className="w-full border border-gray-300 rounded-2xl px-6 py-5 text-lg outline-none focus:border-green-600"
-              />
-
-              <input
-                type="tel"
-                placeholder="Телефон"
-                className="w-full border border-gray-300 rounded-2xl px-6 py-5 text-lg outline-none focus:border-green-600"
-              />
-
-              <textarea
-                placeholder="Комментарий"
-                rows={5}
-                className="w-full border border-gray-300 rounded-2xl px-6 py-5 text-lg outline-none focus:border-green-600"
-              />
-
+              {/* CLOSE */}
               <button
-                type="submit"
-                className="bg-green-600 hover:bg-green-700 text-white px-10 py-5 rounded-2xl text-lg font-bold transition"
+                onClick={() => setIsOpen(false)}
+                className="absolute top-5 right-5 text-3xl text-gray-400 hover:text-black transition"
               >
-                Отправить заявку
+                ×
               </button>
 
-            </form>
+              <h2 className="text-4xl md:text-5xl font-bold mb-5">
+                Оставить заявку
+              </h2>
+
+              <p className="text-gray-600 text-lg mb-8">
+                Заполните форму и мы свяжемся с вами.
+              </p>
+
+              <form className="space-y-5">
+
+                <input
+                  type="text"
+                  placeholder="Ваше имя"
+                  className="w-full border border-gray-300 rounded-2xl px-6 py-5 text-lg outline-none focus:border-green-600"
+                />
+
+                <input
+                  type="tel"
+                  placeholder="Телефон"
+                  className="w-full border border-gray-300 rounded-2xl px-6 py-5 text-lg outline-none focus:border-green-600"
+                />
+
+                <textarea
+                  placeholder="Комментарий"
+                  rows={4}
+                  className="w-full border border-gray-300 rounded-2xl px-6 py-5 text-lg outline-none focus:border-green-600"
+                />
+
+                <button
+                  type="submit"
+                  className="w-full bg-green-600 hover:bg-green-700 text-white py-5 rounded-2xl text-lg font-bold transition"
+                >
+                  Отправить заявку
+                </button>
+
+              </form>
+
+            </div>
 
           </div>
-
-        </div>
-
-      </section>
+        )
+      }
 
       {/* FOOTER */}
       <footer className="bg-slate-950 text-white py-16">
