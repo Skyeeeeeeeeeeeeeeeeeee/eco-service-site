@@ -20,6 +20,7 @@ export default function PricesPage() {
             <h2 className="text-2xl md:text-3xl font-bold text-green-600">
               Экосервис
             </h2>
+
             <p className="text-gray-500 text-sm">
               Новосибирск
             </p>
@@ -86,6 +87,7 @@ export default function PricesPage() {
             whileHover={{ y: -10 }}
             className="bg-white rounded-3xl p-8 shadow-lg"
           >
+
             <p className="text-green-600 font-semibold mb-4">
               Базовый
             </p>
@@ -106,6 +108,7 @@ export default function PricesPage() {
             >
               Оставить заявку
             </button>
+
           </motion.div>
 
           {/* CARD 2 */}
@@ -116,6 +119,7 @@ export default function PricesPage() {
             whileHover={{ y: -10 }}
             className="bg-white rounded-3xl p-8 shadow-lg border-4 border-green-600"
           >
+
             <p className="text-green-600 font-semibold mb-4">
               Популярный
             </p>
@@ -136,6 +140,7 @@ export default function PricesPage() {
             >
               Оставить заявку
             </button>
+
           </motion.div>
 
           {/* CARD 3 */}
@@ -146,6 +151,7 @@ export default function PricesPage() {
             whileHover={{ y: -10 }}
             className="bg-white rounded-3xl p-8 shadow-lg"
           >
+
             <p className="text-green-600 font-semibold mb-4">
               Премиум
             </p>
@@ -166,6 +172,7 @@ export default function PricesPage() {
             >
               Связаться
             </button>
+
           </motion.div>
 
         </div>
@@ -187,8 +194,16 @@ export default function PricesPage() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ duration: 0.25 }}
-              className="bg-white rounded-3xl p-8 w-full max-w-md shadow-2xl"
+              className="relative bg-white rounded-3xl p-8 w-full max-w-md shadow-2xl"
             >
+
+              {/* CLOSE BUTTON */}
+              <button
+                onClick={() => setIsOpen(false)}
+                className="absolute top-4 right-4 text-3xl text-gray-400 hover:text-black transition"
+              >
+                ×
+              </button>
 
               <h2 className="text-3xl font-bold mb-6">
                 Оставить заявку
@@ -217,13 +232,6 @@ export default function PricesPage() {
                   className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl font-semibold transition"
                 >
                   Отправить
-                </button>
-
-                <button
-                  onClick={() => setIsOpen(false)}
-                  className="w-full border border-gray-300 py-3 rounded-xl font-medium hover:bg-gray-100 transition"
-                >
-                  Закрыть
                 </button>
 
               </div>
