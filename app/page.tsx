@@ -19,7 +19,7 @@ export default function HomePage() {
             </div>
 
             <a
-              href="#contacts"
+              href="#request"
               className="bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-2xl font-medium transition text-sm"
             >
               Заказать
@@ -38,21 +38,21 @@ export default function HomePage() {
             </a>
 
             <a
-              href="/services"
+              href="#services"
               className="bg-gray-100 text-slate-800 px-4 py-2 rounded-xl text-sm whitespace-nowrap"
             >
               Услуги
             </a>
 
             <a
-              href="/prices"
+              href="#prices"
               className="bg-gray-100 text-slate-800 px-4 py-2 rounded-xl text-sm whitespace-nowrap"
             >
               Цены
             </a>
 
             <a
-              href="/contacts"
+              href="#contacts"
               className="bg-gray-100 text-slate-800 px-4 py-2 rounded-xl text-sm whitespace-nowrap"
             >
               Контакты
@@ -71,21 +71,21 @@ export default function HomePage() {
             </a>
 
             <a
-              href="/services"
+              href="#services"
               className="text-slate-800 hover:text-green-600 transition font-medium"
             >
               Услуги
             </a>
 
             <a
-              href="/prices"
+              href="#prices"
               className="text-slate-800 hover:text-green-600 transition font-medium"
             >
               Цены
             </a>
 
             <a
-              href="/contacts"
+              href="#contacts"
               className="text-slate-800 hover:text-green-600 transition font-medium"
             >
               Контакты
@@ -121,13 +121,19 @@ export default function HomePage() {
 
               <div className="flex flex-col sm:flex-row gap-4">
 
-                <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-2xl font-medium transition">
+                <a
+                  href="#request"
+                  className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-2xl font-medium transition text-center"
+                >
                   Оставить заявку
-                </button>
+                </a>
 
-                <button className="border-2 border-slate-800 text-slate-800 px-8 py-4 rounded-2xl font-semibold hover:bg-slate-100 transition">
+                <a
+                  href="#services"
+                  className="border-2 border-slate-800 text-slate-800 px-8 py-4 rounded-2xl font-semibold hover:bg-slate-100 transition text-center"
+                >
                   Смотреть услуги
-                </button>
+                </a>
 
               </div>
 
@@ -147,7 +153,7 @@ export default function HomePage() {
       </section>
 
       {/* SERVICES */}
-      <section className="pb-14 md:pb-20">
+      <section id="services" className="pb-14 md:pb-20">
 
         <div className="max-w-7xl mx-auto px-4 md:px-6">
 
@@ -195,6 +201,53 @@ export default function HomePage() {
               </p>
 
             </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* REQUEST FORM */}
+      <section
+        id="request"
+        className="pb-14 md:pb-20"
+      >
+
+        <div className="max-w-3xl mx-auto px-4">
+
+          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm">
+
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">
+              Оставить заявку
+            </h2>
+
+            <p className="text-gray-600 text-lg mb-8">
+              Оставьте номер телефона и мы свяжемся с вами.
+            </p>
+
+            <form className="space-y-5">
+
+              <input
+                type="text"
+                placeholder="Ваше имя"
+                className="w-full border border-gray-300 rounded-2xl px-5 py-4 text-lg outline-none focus:border-green-600"
+              />
+
+              <input
+                type="tel"
+                placeholder="Ваш телефон"
+                className="w-full border border-gray-300 rounded-2xl px-5 py-4 text-lg outline-none focus:border-green-600"
+              />
+
+              <button
+                type="submit"
+                className="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-2xl text-lg font-medium transition"
+              >
+                Отправить заявку
+              </button>
+
+            </form>
 
           </div>
 
