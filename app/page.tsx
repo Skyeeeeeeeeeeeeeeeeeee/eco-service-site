@@ -166,7 +166,7 @@ export default function HomePage() {
             {/* BOTTOM */}
             <div className="mt-auto p-6 space-y-4">
 
-              {/* DARK MODE */}
+              {/* DARK MODE /}
               <button
                 onClick={toggleTheme}
                 className="w-full border border-gray-300 py-4 rounded-2xl text-lg font-semibold"
@@ -179,7 +179,7 @@ export default function HomePage() {
 
               </button>
 
-              {/* ORDER */}
+              {/* ORDER */}*
               <button
                 onClick={() => {
                   setIsOpen(true)
