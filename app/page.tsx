@@ -53,7 +53,7 @@ export default function HomePage() {
 
           {/* BUTTON */}
           <a
-            href="/contacts"
+            href="#request"
             className="bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-2xl font-medium transition text-sm md:text-base"
           >
             Заказать
@@ -127,7 +127,7 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row gap-4">
 
                 <a
-                  href="/contacts"
+                  href="#request"
                   className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-2xl font-medium transition text-center"
                 >
                   Оставить заявку
@@ -274,91 +274,6 @@ export default function HomePage() {
 
       </section>
 
-      {/* HOW WE WORK */}
-      <section className="pb-16 md:pb-24">
-
-        <div className="max-w-7xl mx-auto px-4 md:px-6">
-
-          <h2 className="text-4xl md:text-6xl font-bold mb-12">
-            Как мы работаем
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-
-            <div className="bg-white rounded-3xl p-8 shadow-sm">
-
-              <div className="text-5xl font-bold text-green-600 mb-5">
-                1
-              </div>
-
-              <h3 className="text-2xl font-bold mb-4">
-                Заявка
-              </h3>
-
-              <p className="text-gray-600">
-                Оставляете заявку
-                на сайте или по телефону.
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-3xl p-8 shadow-sm">
-
-              <div className="text-5xl font-bold text-green-600 mb-5">
-                2
-              </div>
-
-              <h3 className="text-2xl font-bold mb-4">
-                Подбор
-              </h3>
-
-              <p className="text-gray-600">
-                Подбираем решение
-                под ваш объект.
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-3xl p-8 shadow-sm">
-
-              <div className="text-5xl font-bold text-green-600 mb-5">
-                3
-              </div>
-
-              <h3 className="text-2xl font-bold mb-4">
-                Доставка
-              </h3>
-
-              <p className="text-gray-600">
-                Привозим и устанавливаем
-                кабины на объекте.
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-3xl p-8 shadow-sm">
-
-              <div className="text-5xl font-bold text-green-600 mb-5">
-                4
-              </div>
-
-              <h3 className="text-2xl font-bold mb-4">
-                Обслуживание
-              </h3>
-
-              <p className="text-gray-600">
-                Регулярно обслуживаем
-                оборудование.
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
       {/* CTA */}
       <section className="pb-16 md:pb-24">
 
@@ -378,11 +293,65 @@ export default function HomePage() {
             </p>
 
             <a
-              href="/contacts"
+              href="#request"
               className="inline-block bg-white text-green-700 px-10 py-5 rounded-2xl text-lg font-bold hover:bg-gray-100 transition"
             >
               Оставить заявку
             </a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* REQUEST FORM */}
+      <section
+        id="request"
+        className="pb-16 md:pb-24"
+      >
+
+        <div className="max-w-5xl mx-auto px-4 md:px-6">
+
+          <div className="bg-white rounded-[40px] p-8 md:p-14 shadow-sm">
+
+            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+              Оставить заявку
+            </h2>
+
+            <p className="text-xl text-gray-600 mb-10">
+              Заполните форму и мы свяжемся с вами
+              в ближайшее время.
+            </p>
+
+            <form className="space-y-6">
+
+              <input
+                type="text"
+                placeholder="Ваше имя"
+                className="w-full border border-gray-300 rounded-2xl px-6 py-5 text-lg outline-none focus:border-green-600"
+              />
+
+              <input
+                type="tel"
+                placeholder="Телефон"
+                className="w-full border border-gray-300 rounded-2xl px-6 py-5 text-lg outline-none focus:border-green-600"
+              />
+
+              <textarea
+                placeholder="Комментарий"
+                rows={5}
+                className="w-full border border-gray-300 rounded-2xl px-6 py-5 text-lg outline-none focus:border-green-600"
+              />
+
+              <button
+                type="submit"
+                className="bg-green-600 hover:bg-green-700 text-white px-10 py-5 rounded-2xl text-lg font-bold transition"
+              >
+                Отправить заявку
+              </button>
+
+            </form>
 
           </div>
 
