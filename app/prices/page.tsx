@@ -1,93 +1,118 @@
 export default function PricesPage() {
   return (
-    <main className="min-h-screen bg-white text-gray-900">
+    <main className="min-h-screen bg-[#f5f5f5] text-slate-900">
 
-      <section className="max-w-7xl mx-auto px-6 py-24">
+      {/* HEADER */}
+      <header className="border-b border-gray-200 bg-white sticky top-0 z-50">
 
-        <h1 className="text-5xl font-bold mb-6">
-          Цены
-        </h1>
+        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
 
-        <p className="text-xl text-gray-600 mb-16 max-w-3xl">
-          Стоимость аренды и обслуживания биотуалетов
-          в Новосибирске и области.
-        </p>
-
-        <div className="grid md:grid-cols-3 gap-8">
-
-          {/* CARD 1 */}
-          <div className="border border-gray-200 rounded-3xl p-8">
-
-            <h2 className="text-2xl font-bold mb-4">
-              Суточная аренда
+          <a href="/" className="block">
+            <h2 className="text-2xl md:text-3xl font-bold text-green-600">
+              Экосервис
             </h2>
 
-            <p className="text-5xl font-bold text-green-600 mb-6">
-              2 500 ₽
+            <p className="text-gray-500 text-sm">
+              Новосибирск
             </p>
+          </a>
 
-            <ul className="space-y-3 text-gray-600 mb-8">
-              <li>✔ Доставка</li>
-              <li>✔ Установка</li>
-              <li>✔ Обслуживание</li>
-            </ul>
+          <nav className="hidden md:flex items-center gap-10">
 
-            <button className="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-2xl transition">
-              Заказать
-            </button>
-          </div>
+            <a href="/" className="font-medium hover:text-green-600 transition">
+              Главная
+            </a>
 
-          {/* CARD 2 */}
-          <div className="border-2 border-green-600 rounded-3xl p-8 relative">
+            <a href="/services" className="font-medium hover:text-green-600 transition">
+              Услуги
+            </a>
 
-            <div className="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm">
-              Популярно
+            <a href="/prices" className="font-medium text-green-600">
+              Цены
+            </a>
+
+            <a href="/contacts" className="font-medium hover:text-green-600 transition">
+              Контакты
+            </a>
+
+          </nav>
+
+          <a
+            href="/contacts"
+            className="bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-2xl font-medium transition"
+          >
+            Заказать
+          </a>
+
+        </div>
+
+      </header>
+
+      {/* CONTENT */}
+      <section className="py-16 md:py-24">
+
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+
+          <h1 className="text-5xl md:text-7xl font-bold mb-8">
+            Цены
+          </h1>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <div className="bg-white rounded-3xl p-10 shadow-sm">
+
+              <h2 className="text-3xl font-bold mb-4">
+                Стандарт
+              </h2>
+
+              <p className="text-5xl font-bold text-green-600 mb-6">
+                3000₽
+              </p>
+
+              <p className="text-gray-600 text-lg">
+                Аренда биотуалета на месяц.
+              </p>
+
             </div>
 
-            <h2 className="text-2xl font-bold mb-4">
-              Месячная аренда
-            </h2>
+            <div className="bg-white rounded-3xl p-10 shadow-sm border-4 border-green-600">
 
-            <p className="text-5xl font-bold text-green-600 mb-6">
-              18 000 ₽
-            </p>
+              <h2 className="text-3xl font-bold mb-4">
+                Бизнес
+              </h2>
 
-            <ul className="space-y-3 text-gray-600 mb-8">
-              <li>✔ Регулярное обслуживание</li>
-              <li>✔ Замена расходников</li>
-              <li>✔ Техническая поддержка</li>
-            </ul>
+              <p className="text-5xl font-bold text-green-600 mb-6">
+                5000₽
+              </p>
 
-            <button className="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-2xl transition">
-              Заказать
-            </button>
-          </div>
+              <p className="text-gray-600 text-lg">
+                Кабина + обслуживание.
+              </p>
 
-          {/* CARD 3 */}
-          <div className="border border-gray-200 rounded-3xl p-8">
+            </div>
 
-            <h2 className="text-2xl font-bold mb-4">
-              Продажа кабин
-            </h2>
+            <div className="bg-white rounded-3xl p-10 shadow-sm">
 
-            <p className="text-5xl font-bold text-green-600 mb-6">
-              от 45 000 ₽
-            </p>
+              <h2 className="text-3xl font-bold mb-4">
+                Premium
+              </h2>
 
-            <ul className="space-y-3 text-gray-600 mb-8">
-              <li>✔ Новые кабины</li>
-              <li>✔ Гарантия</li>
-              <li>✔ Доставка по области</li>
-            </ul>
+              <p className="text-5xl font-bold text-green-600 mb-6">
+                9000₽
+              </p>
 
-            <button className="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-2xl transition">
-              Купить
-            </button>
+              <p className="text-gray-600 text-lg">
+                VIP решение для мероприятий.
+              </p>
+
+            </div>
+
           </div>
 
         </div>
+
       </section>
 
     </main>
-  );
+  )
 }
