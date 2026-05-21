@@ -1,56 +1,60 @@
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-[#f5f5f5]">
+    <main className="min-h-screen bg-[#f5f5f5] text-slate-900">
 
       {/* HEADER */}
-      <header className="border-b border-gray-200 bg-white">
+      <header className="border-b border-gray-200 bg-white sticky top-0 z-50">
+
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
 
+          {/* LOGO */}
           <div>
-            <h2 className="text-xl md:text-3xl font-bold text-green-600">
+            <h2 className="text-2xl md:text-3xl font-bold text-green-600">
               Экосервис
             </h2>
 
-            <p className="text-gray-500 text-sm">
+            <p className="text-gray-500 text-sm md:text-base">
               Новосибирск
             </p>
           </div>
 
+          {/* DESKTOP MENU */}
           <nav className="hidden md:flex items-center gap-10">
 
             <a
               href="/"
-              className="text-slate-800 hover:text-green-600 transition font-medium"
+              className="font-medium hover:text-green-600 transition"
             >
               Главная
             </a>
 
             <a
               href="/services"
-              className="text-slate-800 hover:text-green-600 transition font-medium"
+              className="font-medium hover:text-green-600 transition"
             >
               Услуги
             </a>
 
             <a
               href="/prices"
-              className="text-slate-800 hover:text-green-600 transition font-medium"
+              className="font-medium hover:text-green-600 transition"
             >
               Цены
             </a>
 
             <a
               href="/contacts"
-              className="text-slate-800 hover:text-green-600 transition font-medium"
+              className="font-medium hover:text-green-600 transition"
             >
               Контакты
             </a>
 
           </nav>
 
+          {/* BUTTON */}
           <a
             href="/contacts"
-            className="bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-2xl font-medium transition text-sm"
+            className="bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-2xl font-medium transition text-sm md:text-base"
           >
             Заказать
           </a>
@@ -58,62 +62,68 @@ export default function HomePage() {
         </div>
 
         {/* MOBILE MENU */}
-        <div className="flex md:hidden gap-3 px-4 pb-4 overflow-x-auto">
+        <div className="md:hidden flex gap-3 px-4 pb-4 overflow-x-auto">
 
           <a
             href="/"
-            className="bg-gray-100 text-slate-800 px-4 py-2 rounded-xl text-sm whitespace-nowrap"
+            className="bg-gray-100 px-4 py-2 rounded-xl text-sm whitespace-nowrap"
           >
             Главная
           </a>
 
           <a
             href="/services"
-            className="bg-gray-100 text-slate-800 px-4 py-2 rounded-xl text-sm whitespace-nowrap"
+            className="bg-gray-100 px-4 py-2 rounded-xl text-sm whitespace-nowrap"
           >
             Услуги
           </a>
 
           <a
             href="/prices"
-            className="bg-gray-100 text-slate-800 px-4 py-2 rounded-xl text-sm whitespace-nowrap"
+            className="bg-gray-100 px-4 py-2 rounded-xl text-sm whitespace-nowrap"
           >
             Цены
           </a>
 
           <a
             href="/contacts"
-            className="bg-gray-100 text-slate-800 px-4 py-2 rounded-xl text-sm whitespace-nowrap"
+            className="bg-gray-100 px-4 py-2 rounded-xl text-sm whitespace-nowrap"
           >
             Контакты
           </a>
 
         </div>
+
       </header>
 
       {/* HERO */}
-      <section className="py-10 md:py-24">
+      <section className="py-14 md:py-24">
+
         <div className="max-w-7xl mx-auto px-4 md:px-6">
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
 
+            {/* LEFT */}
             <div>
 
               <p className="text-green-600 font-semibold mb-4 text-sm md:text-base">
                 Аренда и продажа биотуалетов
               </p>
 
-              <h1 className="text-5xl md:text-6xl font-bold leading-tight text-slate-900 mb-6">
-                Биотуалеты для стройки,
-                мероприятий и бизнеса
+              <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
+                Биотуалеты
+                для стройки,
+                мероприятий
+                и бизнеса
               </h1>
 
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-8">
                 ООО «Экосервис Новосибирск» предоставляет аренду,
                 обслуживание и продажу туалетных кабин
                 по Новосибирску и области.
               </p>
 
+              {/* BUTTONS */}
               <div className="flex flex-col sm:flex-row gap-4">
 
                 <a
@@ -125,18 +135,64 @@ export default function HomePage() {
 
                 <a
                   href="/services"
-                  className="border-2 border-slate-800 text-slate-800 px-8 py-4 rounded-2xl font-semibold hover:bg-slate-100 transition text-center"
+                  className="border-2 border-slate-900 px-8 py-4 rounded-2xl font-semibold hover:bg-slate-100 transition text-center"
                 >
                   Смотреть услуги
                 </a>
 
               </div>
 
+              {/* ADVANTAGES */}
+              <div className="grid grid-cols-2 gap-4 mt-10">
+
+                <div className="bg-white rounded-2xl p-4 shadow-sm">
+                  <p className="font-bold text-green-600 text-xl">
+                    24/7
+                  </p>
+
+                  <p className="text-gray-600 mt-1">
+                    Поддержка клиентов
+                  </p>
+                </div>
+
+                <div className="bg-white rounded-2xl p-4 shadow-sm">
+                  <p className="font-bold text-green-600 text-xl">
+                    5+
+                  </p>
+
+                  <p className="text-gray-600 mt-1">
+                    Лет опыта
+                  </p>
+                </div>
+
+                <div className="bg-white rounded-2xl p-4 shadow-sm">
+                  <p className="font-bold text-green-600 text-xl">
+                    1000+
+                  </p>
+
+                  <p className="text-gray-600 mt-1">
+                    Выполненных заказов
+                  </p>
+                </div>
+
+                <div className="bg-white rounded-2xl p-4 shadow-sm">
+                  <p className="font-bold text-green-600 text-xl">
+                    500+
+                  </p>
+
+                  <p className="text-gray-600 mt-1">
+                    Постоянных клиентов
+                  </p>
+                </div>
+
+              </div>
+
             </div>
 
-            <div className="bg-green-100 rounded-3xl h-[250px] md:h-[500px] flex items-center justify-center">
+            {/* RIGHT */}
+            <div className="bg-green-100 rounded-[40px] h-[300px] md:h-[600px] flex items-center justify-center">
 
-              <p className="text-green-700 text-xl md:text-2xl font-bold">
+              <p className="text-green-700 text-2xl md:text-4xl font-bold">
                 Фото биотуалета
               </p>
 
@@ -145,7 +201,236 @@ export default function HomePage() {
           </div>
 
         </div>
+
       </section>
+
+      {/* WHY US */}
+      <section className="pb-16 md:pb-24">
+
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+
+          <h2 className="text-4xl md:text-6xl font-bold mb-12">
+            Почему выбирают нас
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+
+            <div className="bg-white p-8 rounded-3xl shadow-sm">
+              <h3 className="text-2xl font-bold mb-4">
+                Быстрая доставка
+              </h3>
+
+              <p className="text-gray-600 leading-relaxed">
+                Привозим кабины по Новосибирску
+                и области в кратчайшие сроки.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-3xl shadow-sm">
+              <h3 className="text-2xl font-bold mb-4">
+                Чистые кабины
+              </h3>
+
+              <p className="text-gray-600 leading-relaxed">
+                Регулярная санитарная обработка
+                и техническое обслуживание.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-3xl shadow-sm">
+              <h3 className="text-2xl font-bold mb-4">
+                Любые объекты
+              </h3>
+
+              <p className="text-gray-600 leading-relaxed">
+                Работаем со стройками,
+                мероприятиями и частными клиентами.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-3xl shadow-sm">
+              <h3 className="text-2xl font-bold mb-4">
+                Работаем 24/7
+              </h3>
+
+              <p className="text-gray-600 leading-relaxed">
+                Всегда на связи и готовы помочь
+                в любой ситуации.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* HOW WE WORK */}
+      <section className="pb-16 md:pb-24">
+
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+
+          <h2 className="text-4xl md:text-6xl font-bold mb-12">
+            Как мы работаем
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+
+            <div className="bg-white rounded-3xl p-8 shadow-sm">
+              <div className="text-5xl font-bold text-green-600 mb-5">
+                1
+              </div>
+
+              <h3 className="text-2xl font-bold mb-4">
+                Заявка
+              </h3>
+
+              <p className="text-gray-600">
+                Вы оставляете заявку
+                на сайте или по телефону.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-3xl p-8 shadow-sm">
+              <div className="text-5xl font-bold text-green-600 mb-5">
+                2
+              </div>
+
+              <h3 className="text-2xl font-bold mb-4">
+                Подбор
+              </h3>
+
+              <p className="text-gray-600">
+                Подбираем подходящие
+                кабины под ваш объект.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-3xl p-8 shadow-sm">
+              <div className="text-5xl font-bold text-green-600 mb-5">
+                3
+              </div>
+
+              <h3 className="text-2xl font-bold mb-4">
+                Доставка
+              </h3>
+
+              <p className="text-gray-600">
+                Привозим и устанавливаем
+                оборудование.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-3xl p-8 shadow-sm">
+              <div className="text-5xl font-bold text-green-600 mb-5">
+                4
+              </div>
+
+              <h3 className="text-2xl font-bold mb-4">
+                Обслуживание
+              </h3>
+
+              <p className="text-gray-600">
+                Регулярно обслуживаем
+                кабины на объекте.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* CTA */}
+      <section className="pb-16 md:pb-24">
+
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+
+          <div className="bg-green-600 rounded-[40px] p-10 md:p-20 text-white text-center">
+
+            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+              Нужен биотуалет
+              для объекта?
+            </h2>
+
+            <p className="text-xl text-green-100 mb-10 max-w-3xl mx-auto">
+              Оставьте заявку —
+              мы подберём оптимальное решение
+              под ваши задачи.
+            </p>
+
+            <a
+              href="/contacts"
+              className="inline-block bg-white text-green-700 px-10 py-5 rounded-2xl text-lg font-bold hover:bg-gray-100 transition"
+            >
+              Оставить заявку
+            </a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* FOOTER */}
+      <footer className="bg-slate-950 text-white py-16">
+
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+            <div>
+
+              <h2 className="text-4xl font-bold mb-4">
+                Экосервис
+              </h2>
+
+              <p className="text-gray-400 text-lg leading-relaxed">
+                Аренда и продажа биотуалетов
+                в Новосибирске и области.
+              </p>
+
+            </div>
+
+            <div>
+
+              <h3 className="text-2xl font-bold mb-5">
+                Навигация
+              </h3>
+
+              <div className="flex flex-col gap-3 text-gray-300">
+
+                <a href="/">Главная</a>
+                <a href="/services">Услуги</a>
+                <a href="/prices">Цены</a>
+                <a href="/contacts">Контакты</a>
+
+              </div>
+
+            </div>
+
+            <div>
+
+              <h3 className="text-2xl font-bold mb-5">
+                Контакты
+              </h3>
+
+              <div className="flex flex-col gap-3 text-gray-300">
+
+                <p>📞 +7 (999) 123-45-67</p>
+                <p>📍 Новосибирск</p>
+                <p>✉ eco-service@mail.ru</p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </footer>
 
     </main>
   )
