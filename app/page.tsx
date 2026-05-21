@@ -69,16 +69,6 @@ export default function HomePage() {
           {/* RIGHT BUTTONS */}
           <div className="hidden md:flex items-center gap-4">
 
-            {/* DARK MODE */}
-            <button
-              onClick={toggleTheme}
-              className="flex items-center justify-center w-12 h-12 rounded-2xl border border-gray-300 hover:scale-105 transition"
-            >
-
-              {darkMode ? '☀️' : '🌙'}
-
-            </button>
-
             {/* ORDER */}
             <button
               onClick={() => setIsOpen(true)}
@@ -164,21 +154,7 @@ export default function HomePage() {
             </div>
 
             {/* BOTTOM */}
-            <div className="mt-auto p-6 space-y-4">
-
-              {/* DARK MODE /}
-              <button
-                onClick={toggleTheme}
-                className="w-full border border-gray-300 py-4 rounded-2xl text-lg font-semibold"
-              >
-
-                {darkMode
-                  ? '☀️ Светлая тема'
-                  : '🌙 Тёмная тема'
-                }
-
-              </button>
-              */}
+            <div className="mt-auto p-6">
 
               {/* ORDER */}
               <button
