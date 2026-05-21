@@ -389,9 +389,9 @@ export default function ContactsPage() {
 
               <div className="flex flex-col gap-4 text-gray-300 text-lg">
 
-                <p>📞 +7 (383) 319-40-21</p>
-                <p>📍 Советская ул., 64/1</p>
-                <p>🕒 Пн–Пт: 9:00–17:00</p>
+                <p> +7 (383) 319-40-21</p>
+                <p> Советская ул., 64/1</p>
+                <p> Пн–Пт: 9:00–17:00</p>
 
               </div>
 
