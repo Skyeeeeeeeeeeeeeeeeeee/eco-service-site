@@ -1,4 +1,4 @@
-export default function PricesPage() {
+export default function ContactsPage() {
   return (
     <main className="min-h-screen bg-[#f5f5f5] text-slate-900">
 
@@ -7,6 +7,7 @@ export default function PricesPage() {
 
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
 
+          {/* LOGO */}
           <a href="/" className="block">
             <h2 className="text-2xl md:text-3xl font-bold text-green-600">
               Экосервис
@@ -17,26 +18,40 @@ export default function PricesPage() {
             </p>
           </a>
 
+          {/* MENU */}
           <nav className="hidden md:flex items-center gap-10">
 
-            <a href="/" className="font-medium hover:text-green-600 transition">
+            <a
+              href="/"
+              className="font-medium hover:text-green-600 transition"
+            >
               Главная
             </a>
 
-            <a href="/services" className="font-medium hover:text-green-600 transition">
+            <a
+              href="/services"
+              className="font-medium hover:text-green-600 transition"
+            >
               Услуги
             </a>
 
-            <a href="/prices" className="font-medium text-green-600">
+            <a
+              href="/prices"
+              className="font-medium hover:text-green-600 transition"
+            >
               Цены
             </a>
 
-            <a href="/contacts" className="font-medium hover:text-green-600 transition">
+            <a
+              href="/contacts"
+              className="font-medium text-green-600"
+            >
               Контакты
             </a>
 
           </nav>
 
+          {/* BUTTON */}
           <a
             href="/contacts"
             className="bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-2xl font-medium transition"
@@ -51,61 +66,25 @@ export default function PricesPage() {
       {/* CONTENT */}
       <section className="py-16 md:py-24">
 
-        <div className="max-w-7xl mx-auto px-4 md:px-6">
+        <div className="max-w-5xl mx-auto px-4 md:px-6">
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-8">
-            Цены
+          <h1 className="text-5xl md:text-7xl font-bold mb-10">
+            Контакты
           </h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="bg-white rounded-3xl p-10 shadow-sm space-y-6">
 
-            <div className="bg-white rounded-3xl p-10 shadow-sm">
+            <p className="text-2xl">
+              📞 +7 (999) 123-45-67
+            </p>
 
-              <h2 className="text-3xl font-bold mb-4">
-                Стандарт
-              </h2>
+            <p className="text-2xl">
+              ✉ eco-service@mail.ru
+            </p>
 
-              <p className="text-5xl font-bold text-green-600 mb-6">
-                3000₽
-              </p>
-
-              <p className="text-gray-600 text-lg">
-                Аренда биотуалета на месяц.
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-3xl p-10 shadow-sm border-4 border-green-600">
-
-              <h2 className="text-3xl font-bold mb-4">
-                Бизнес
-              </h2>
-
-              <p className="text-5xl font-bold text-green-600 mb-6">
-                5000₽
-              </p>
-
-              <p className="text-gray-600 text-lg">
-                Кабина + обслуживание.
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-3xl p-10 shadow-sm">
-
-              <h2 className="text-3xl font-bold mb-4">
-                Premium
-              </h2>
-
-              <p className="text-5xl font-bold text-green-600 mb-6">
-                9000₽
-              </p>
-
-              <p className="text-gray-600 text-lg">
-                VIP решение для мероприятий.
-              </p>
-
-            </div>
+            <p className="text-2xl">
+              📍 Новосибирск
+            </p>
 
           </div>
 
