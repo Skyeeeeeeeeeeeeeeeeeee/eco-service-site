@@ -18,7 +18,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="flex items-center gap-4 md:gap-8 text-sm md:text-base">
             <a href="/" className="hover:text-green-600 transition">
               Главная
             </a>
