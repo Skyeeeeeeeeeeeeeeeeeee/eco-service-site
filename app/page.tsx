@@ -4,19 +4,64 @@ export default function HomePage() {
 
       {/* HEADER */}
       <header className="border-b border-gray-200 bg-white">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 py-4">
 
-          <div>
-            <h2 className="text-xl md:text-3xl font-bold text-green-600">
-              Экосервис
-            </h2>
+          <div className="flex items-center justify-between">
 
-            <p className="text-gray-500 text-sm">
-              Новосибирск
-            </p>
+            <div>
+              <h2 className="text-xl md:text-3xl font-bold text-green-600">
+                Экосервис
+              </h2>
+
+              <p className="text-gray-500 text-sm">
+                Новосибирск
+              </p>
+            </div>
+
+            <a
+              href="#contacts"
+              className="bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-2xl font-medium transition text-sm"
+            >
+              Заказать
+            </a>
+
           </div>
 
-          <nav className="hidden md:flex items-center gap-8">
+          {/* MOBILE MENU */}
+          <div className="flex md:hidden gap-3 mt-4 overflow-x-auto pb-1">
+
+            <a
+              href="/"
+              className="bg-gray-100 text-slate-800 px-4 py-2 rounded-xl text-sm whitespace-nowrap"
+            >
+              Главная
+            </a>
+
+            <a
+              href="/services"
+              className="bg-gray-100 text-slate-800 px-4 py-2 rounded-xl text-sm whitespace-nowrap"
+            >
+              Услуги
+            </a>
+
+            <a
+              href="/prices"
+              className="bg-gray-100 text-slate-800 px-4 py-2 rounded-xl text-sm whitespace-nowrap"
+            >
+              Цены
+            </a>
+
+            <a
+              href="/contacts"
+              className="bg-gray-100 text-slate-800 px-4 py-2 rounded-xl text-sm whitespace-nowrap"
+            >
+              Контакты
+            </a>
+
+          </div>
+
+          {/* DESKTOP MENU */}
+          <nav className="hidden md:flex items-center justify-center gap-8 mt-4">
 
             <a
               href="/"
@@ -47,10 +92,6 @@ export default function HomePage() {
             </a>
 
           </nav>
-
-          <button className="bg-green-600 hover:bg-green-700 text-white px-4 md:px-6 py-2 md:py-3 rounded-2xl font-medium transition text-sm">
-            Заказать
-          </button>
 
         </div>
       </header>
@@ -162,7 +203,10 @@ export default function HomePage() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-slate-950 text-white py-12 md:py-20">
+      <footer
+        id="contacts"
+        className="bg-slate-950 text-white py-12 md:py-20"
+      >
 
         <div className="max-w-7xl mx-auto px-4 md:px-6">
 
@@ -170,10 +214,20 @@ export default function HomePage() {
             ООО «Экосервис Новосибирск»
           </h2>
 
-          <p className="text-gray-400 text-lg md:text-xl leading-relaxed">
+          <p className="text-gray-400 text-lg md:text-xl leading-relaxed mb-8">
             Аренда и продажа биотуалетов
             в Новосибирске и области
           </p>
+
+          <div className="space-y-3 text-gray-300 text-lg">
+
+            <p>📞 +7 (999) 123-45-67</p>
+
+            <p>📍 Новосибирск</p>
+
+            <p>✉ eco-service@mail.ru</p>
+
+          </div>
 
         </div>
 
