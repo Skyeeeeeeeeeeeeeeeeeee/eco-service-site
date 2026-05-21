@@ -13,7 +13,7 @@ export default function HomePage() {
               Экосервис
             </h2>
 
-            <p className="text-gray-500 text-sm md:text-base">
+            <p className="text-gray-500 text-sm">
               Новосибирск
             </p>
           </a>
@@ -101,7 +101,7 @@ export default function HomePage() {
 
         <div className="max-w-7xl mx-auto px-4 md:px-6">
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
             {/* LEFT */}
             <div>
@@ -123,6 +123,7 @@ export default function HomePage() {
                 по Новосибирску и области.
               </p>
 
+              {/* BUTTONS */}
               <div className="flex flex-col sm:flex-row gap-4">
 
                 <a
@@ -141,16 +142,247 @@ export default function HomePage() {
 
               </div>
 
+              {/* STATS */}
+              <div className="grid grid-cols-2 gap-4 mt-10">
+
+                <div className="bg-white rounded-2xl p-5 shadow-sm">
+                  <p className="text-3xl font-bold text-green-600">
+                    5+
+                  </p>
+
+                  <p className="text-gray-600 mt-2">
+                    Лет на рынке
+                  </p>
+                </div>
+
+                <div className="bg-white rounded-2xl p-5 shadow-sm">
+                  <p className="text-3xl font-bold text-green-600">
+                    1000+
+                  </p>
+
+                  <p className="text-gray-600 mt-2">
+                    Выполненных заказов
+                  </p>
+                </div>
+
+                <div className="bg-white rounded-2xl p-5 shadow-sm">
+                  <p className="text-3xl font-bold text-green-600">
+                    24/7
+                  </p>
+
+                  <p className="text-gray-600 mt-2">
+                    Поддержка клиентов
+                  </p>
+                </div>
+
+                <div className="bg-white rounded-2xl p-5 shadow-sm">
+                  <p className="text-3xl font-bold text-green-600">
+                    500+
+                  </p>
+
+                  <p className="text-gray-600 mt-2">
+                    Постоянных клиентов
+                  </p>
+                </div>
+
+              </div>
+
             </div>
 
             {/* RIGHT */}
-            <div className="bg-green-100 rounded-[40px] h-[300px] md:h-[600px] flex items-center justify-center">
+            <div className="bg-green-100 rounded-[40px] h-[320px] md:h-[620px] flex items-center justify-center">
 
               <p className="text-green-700 text-2xl md:text-4xl font-bold">
                 Фото биотуалета
               </p>
 
             </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* ADVANTAGES */}
+      <section className="pb-16 md:pb-24">
+
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+
+          <h2 className="text-4xl md:text-6xl font-bold mb-12">
+            Почему выбирают нас
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+
+            <div className="bg-white rounded-3xl p-8 shadow-sm">
+
+              <h3 className="text-2xl font-bold mb-4">
+                Быстрая доставка
+              </h3>
+
+              <p className="text-gray-600 leading-relaxed">
+                Доставляем биотуалеты
+                по Новосибирску и области
+                в кратчайшие сроки.
+              </p>
+
+            </div>
+
+            <div className="bg-white rounded-3xl p-8 shadow-sm">
+
+              <h3 className="text-2xl font-bold mb-4">
+                Чистые кабины
+              </h3>
+
+              <p className="text-gray-600 leading-relaxed">
+                Регулярная санитарная обработка
+                и техническое обслуживание.
+              </p>
+
+            </div>
+
+            <div className="bg-white rounded-3xl p-8 shadow-sm">
+
+              <h3 className="text-2xl font-bold mb-4">
+                Любые объекты
+              </h3>
+
+              <p className="text-gray-600 leading-relaxed">
+                Работаем со стройками,
+                мероприятиями и частными объектами.
+              </p>
+
+            </div>
+
+            <div className="bg-white rounded-3xl p-8 shadow-sm">
+
+              <h3 className="text-2xl font-bold mb-4">
+                Работаем 24/7
+              </h3>
+
+              <p className="text-gray-600 leading-relaxed">
+                Всегда готовы помочь
+                и ответить на вопросы клиентов.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* HOW WE WORK */}
+      <section className="pb-16 md:pb-24">
+
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+
+          <h2 className="text-4xl md:text-6xl font-bold mb-12">
+            Как мы работаем
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+
+            <div className="bg-white rounded-3xl p-8 shadow-sm">
+
+              <div className="text-5xl font-bold text-green-600 mb-5">
+                1
+              </div>
+
+              <h3 className="text-2xl font-bold mb-4">
+                Заявка
+              </h3>
+
+              <p className="text-gray-600">
+                Оставляете заявку
+                на сайте или по телефону.
+              </p>
+
+            </div>
+
+            <div className="bg-white rounded-3xl p-8 shadow-sm">
+
+              <div className="text-5xl font-bold text-green-600 mb-5">
+                2
+              </div>
+
+              <h3 className="text-2xl font-bold mb-4">
+                Подбор
+              </h3>
+
+              <p className="text-gray-600">
+                Подбираем решение
+                под ваш объект.
+              </p>
+
+            </div>
+
+            <div className="bg-white rounded-3xl p-8 shadow-sm">
+
+              <div className="text-5xl font-bold text-green-600 mb-5">
+                3
+              </div>
+
+              <h3 className="text-2xl font-bold mb-4">
+                Доставка
+              </h3>
+
+              <p className="text-gray-600">
+                Привозим и устанавливаем
+                кабины на объекте.
+              </p>
+
+            </div>
+
+            <div className="bg-white rounded-3xl p-8 shadow-sm">
+
+              <div className="text-5xl font-bold text-green-600 mb-5">
+                4
+              </div>
+
+              <h3 className="text-2xl font-bold mb-4">
+                Обслуживание
+              </h3>
+
+              <p className="text-gray-600">
+                Регулярно обслуживаем
+                оборудование.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* CTA */}
+      <section className="pb-16 md:pb-24">
+
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+
+          <div className="bg-green-600 rounded-[40px] p-10 md:p-20 text-white text-center">
+
+            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+              Нужен биотуалет
+              для объекта?
+            </h2>
+
+            <p className="text-xl text-green-100 mb-10 max-w-3xl mx-auto">
+              Оставьте заявку —
+              мы быстро подберём подходящее решение
+              для вашего объекта.
+            </p>
+
+            <a
+              href="/contacts"
+              className="inline-block bg-white text-green-700 px-10 py-5 rounded-2xl text-lg font-bold hover:bg-gray-100 transition"
+            >
+              Оставить заявку
+            </a>
 
           </div>
 
