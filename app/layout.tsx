@@ -3,7 +3,7 @@ import "./globals.css";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Эко-сервис Новосибирск",
+  title: "Экосервис Новосибирск",
   description: "Аренда и продажа биотуалетов",
 };
 
@@ -23,7 +23,7 @@ export default function RootLayout({
             <Link href="/">
               <div>
                 <h2 className="text-2xl font-bold text-green-700">
-                  Эко-сервис
+                  Экосервис
                 </h2>
 
                 <p className="text-sm text-gray-500">
@@ -79,7 +79,7 @@ export default function RootLayout({
           <div className="max-w-7xl mx-auto px-6">
 
             <h2 className="text-2xl font-bold mb-4">
-              ООО «Эко-сервис Новосибирск»
+              ООО «Экосервис Новосибирск»
             </h2>
 
             <p className="text-gray-400">
