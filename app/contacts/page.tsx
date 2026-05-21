@@ -142,15 +142,39 @@ export default function ContactsPage() {
             </div>
 
             {/* MAP */}
-            <div className="bg-white rounded-[40px] overflow-hidden shadow-sm min-h-[500px]">
+            <div className="bg-white rounded-[40px] overflow-hidden shadow-sm min-h-[500px] relative">
 
               <iframe
-                src="https://yandex.ru/map-widget/v1/?ll=82.920430%2C55.041191&mode=search&oid=1081228821&ol=biz&z=17"
+                src="https://yandex.ru/map-widget/v1/?ll=82.920430%2C55.041191&z=17"
                 width="100%"
                 height="100%"
                 allowFullScreen={true}
                 className="border-0 min-h-[500px]"
               />
+
+              <div className="absolute bottom-6 left-6 right-6">
+
+                <a
+                  href="https://yandex.ru/maps/?text=Новосибирск%20Советская%2064%2F1"
+                  target="_blank"
+                  className="block bg-white/95 backdrop-blur rounded-2xl p-5 shadow-lg hover:bg-white transition"
+                >
+
+                  <p className="text-sm text-gray-500 mb-1">
+                    Адрес офиса
+                  </p>
+
+                  <p className="font-bold text-lg">
+                    Советская ул., 64/1
+                  </p>
+
+                  <p className="text-green-600 font-medium mt-2">
+                    Открыть в Яндекс Картах →
+                  </p>
+
+                </a>
+
+              </div>
 
             </div>
 
@@ -189,6 +213,65 @@ export default function ContactsPage() {
         </div>
 
       </section>
+
+      {/* FOOTER */}
+      <footer className="bg-slate-950 text-white py-16">
+
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+            <div>
+
+              <h2 className="text-4xl font-bold mb-4">
+                Экосервис
+              </h2>
+
+              <p className="text-gray-400 text-lg leading-relaxed">
+                Аренда и продажа биотуалетов
+                в Новосибирске и области.
+              </p>
+
+            </div>
+
+            <div>
+
+              <h3 className="text-2xl font-bold mb-5">
+                Навигация
+              </h3>
+
+              <div className="flex flex-col gap-3 text-gray-300">
+
+                <a href="/">Главная</a>
+                <a href="/services">Услуги</a>
+                <a href="/prices">Цены</a>
+                <a href="/contacts">Контакты</a>
+
+              </div>
+
+            </div>
+
+            <div>
+
+              <h3 className="text-2xl font-bold mb-5">
+                Контакты
+              </h3>
+
+              <div className="flex flex-col gap-3 text-gray-300">
+
+                <p>📞 +7 (383) 319-40-21</p>
+                <p>📍 Советская ул., 64/1</p>
+                <p>🕒 Пн–Пт: 9:00–17:00</p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </footer>
 
     </main>
   )
