@@ -1,4 +1,4 @@
-export default function ServicesPage() {
+export default function HomePage() {
   return (
     <main className="min-h-screen bg-[#f5f5f5] text-slate-900">
 
@@ -13,7 +13,7 @@ export default function ServicesPage() {
               Экосервис
             </h2>
 
-            <p className="text-gray-500 text-sm">
+            <p className="text-gray-500 text-sm md:text-base">
               Новосибирск
             </p>
           </a>
@@ -23,14 +23,14 @@ export default function ServicesPage() {
 
             <a
               href="/"
-              className="font-medium hover:text-green-600 transition"
+              className="font-medium text-green-600"
             >
               Главная
             </a>
 
             <a
               href="/services"
-              className="font-medium text-green-600"
+              className="font-medium hover:text-green-600 transition"
             >
               Услуги
             </a>
@@ -66,28 +66,28 @@ export default function ServicesPage() {
 
           <a
             href="/"
-            className="bg-gray-100 text-slate-800 px-4 py-2 rounded-xl text-sm whitespace-nowrap"
+            className="bg-green-600 text-white px-4 py-2 rounded-xl text-sm whitespace-nowrap"
           >
             Главная
           </a>
 
           <a
             href="/services"
-            className="bg-green-600 text-white px-4 py-2 rounded-xl text-sm whitespace-nowrap"
+            className="bg-gray-100 px-4 py-2 rounded-xl text-sm whitespace-nowrap"
           >
             Услуги
           </a>
 
           <a
             href="/prices"
-            className="bg-gray-100 text-slate-800 px-4 py-2 rounded-xl text-sm whitespace-nowrap"
+            className="bg-gray-100 px-4 py-2 rounded-xl text-sm whitespace-nowrap"
           >
             Цены
           </a>
 
           <a
             href="/contacts"
-            className="bg-gray-100 text-slate-800 px-4 py-2 rounded-xl text-sm whitespace-nowrap"
+            className="bg-gray-100 px-4 py-2 rounded-xl text-sm whitespace-nowrap"
           >
             Контакты
           </a>
@@ -97,83 +97,58 @@ export default function ServicesPage() {
       </header>
 
       {/* HERO */}
-      <section className="py-16 md:py-24">
+      <section className="py-14 md:py-24">
 
         <div className="max-w-7xl mx-auto px-4 md:px-6">
 
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Наши услуги
-          </h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
 
-          <p className="text-lg text-gray-600 max-w-3xl mb-14 leading-relaxed">
-            ООО «Экосервис Новосибирск» предоставляет полный спектр услуг
-            по аренде, продаже и обслуживанию биотуалетов.
-          </p>
+            {/* LEFT */}
+            <div>
 
-          {/* CARDS */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-            {/* CARD */}
-            <div className="bg-white rounded-3xl p-10 shadow-sm border border-gray-200 hover:shadow-lg transition">
-
-              <h2 className="text-3xl font-bold mb-6">
-                Аренда биотуалетов
-              </h2>
-
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                Краткосрочная и долгосрочная аренда кабин
-                для строительных площадок,
-                мероприятий и частных объектов.
+              <p className="text-green-600 font-semibold mb-4 text-sm md:text-base">
+                Аренда и продажа биотуалетов
               </p>
 
-              <a
-                href="/contacts"
-                className="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-2xl transition font-medium"
-              >
-                Заказать
-              </a>
+              <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
+                Биотуалеты
+                для стройки,
+                мероприятий
+                и бизнеса
+              </h1>
+
+              <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-8">
+                ООО «Экосервис Новосибирск» предоставляет аренду,
+                обслуживание и продажу туалетных кабин
+                по Новосибирску и области.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+
+                <a
+                  href="/contacts"
+                  className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-2xl font-medium transition text-center"
+                >
+                  Оставить заявку
+                </a>
+
+                <a
+                  href="/services"
+                  className="border-2 border-slate-900 px-8 py-4 rounded-2xl font-semibold hover:bg-slate-100 transition text-center"
+                >
+                  Смотреть услуги
+                </a>
+
+              </div>
 
             </div>
 
-            {/* CARD */}
-            <div className="bg-white rounded-3xl p-10 shadow-sm border border-gray-200 hover:shadow-lg transition">
+            {/* RIGHT */}
+            <div className="bg-green-100 rounded-[40px] h-[300px] md:h-[600px] flex items-center justify-center">
 
-              <h2 className="text-3xl font-bold mb-6">
-                Продажа кабин
-              </h2>
-
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                Продажа новых и обслуженных туалетных кабин
-                для бизнеса и частного использования.
+              <p className="text-green-700 text-2xl md:text-4xl font-bold">
+                Фото биотуалета
               </p>
-
-              <a
-                href="/contacts"
-                className="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-2xl transition font-medium"
-              >
-                Заказать
-              </a>
-
-            </div>
-
-            {/* CARD */}
-            <div className="bg-white rounded-3xl p-10 shadow-sm border border-gray-200 hover:shadow-lg transition">
-
-              <h2 className="text-3xl font-bold mb-6">
-                Обслуживание
-              </h2>
-
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                Очистка, дезинфекция и регулярное
-                обслуживание кабин.
-              </p>
-
-              <a
-                href="/contacts"
-                className="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-2xl transition font-medium"
-              >
-                Заказать
-              </a>
 
             </div>
 
@@ -184,7 +159,7 @@ export default function ServicesPage() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-slate-950 text-white py-16 mt-10">
+      <footer className="bg-slate-950 text-white py-16">
 
         <div className="max-w-7xl mx-auto px-4 md:px-6">
 
