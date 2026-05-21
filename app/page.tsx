@@ -178,8 +178,9 @@ export default function HomePage() {
                 }
 
               </button>
+              */}
 
-              {/* ORDER */}*
+              {/* ORDER */}
               <button
                 onClick={() => {
                   setIsOpen(true)
