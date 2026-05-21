@@ -147,7 +147,7 @@ export default function ContactsPage() {
               <div className="relative w-full h-[500px]">
 
                 <iframe
-                  src="https://yandex.ru/map-widget/v1/?ll=82.920601%2C55.041065&mode=whatshere&whatshere%5Bpoint%5D=82.920601%2C55.041065&whatshere%5Bzoom%5D=17&z=17"
+                  src="https://yandex.ru/map-widget/v1/?text=Новосибирск%20Советская%2064%2F1&z=18"
                   width="100%"
                   height="100%"
                   frameBorder="0"
