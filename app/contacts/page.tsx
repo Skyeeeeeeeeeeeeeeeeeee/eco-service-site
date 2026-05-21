@@ -141,46 +141,48 @@ export default function ContactsPage() {
 
             </div>
 
-            {/* MAP CARD */}
+            {/* MAP */}
             <div className="bg-white rounded-[40px] overflow-hidden shadow-sm">
 
-              <div className="bg-gradient-to-br from-green-500 to-green-700 p-10 md:p-14 text-white min-h-[500px] flex flex-col justify-between">
+              <div className="relative w-full h-[500px]">
 
-                <div>
+                <iframe
+                  src="https://yandex.ru/map-widget/v1/?um=constructor%3A1f7d4db0d53f6a65f8d1bfa0b34a9f5b6a3b4c2f5d8e9a7b&amp;source=constructor"
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  className="absolute inset-0"
+                />
 
-                  <p className="text-green-100 text-lg mb-4">
-                    Наш офис
-                  </p>
+              </div>
 
-                  <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-8">
-                    Советская
-                    ул., 64/1
-                  </h2>
+              {/* ADDRESS CARD */}
+              <div className="p-6 border-t border-gray-100">
 
-                  <p className="text-xl text-green-100 leading-relaxed">
-                    Бизнес-центр,
-                    офис 553,
-                    5 этаж
-                  </p>
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-5">
 
-                </div>
+                  <div>
 
-                <div className="space-y-4">
+                    <p className="text-gray-500 text-sm mb-1">
+                      Адрес офиса
+                    </p>
 
-                  <a
-                    href="https://2gis.ru/novosibirsk/search/Советская%2064%2F1"
-                    target="_blank"
-                    className="block bg-white text-green-700 text-center py-5 rounded-2xl text-xl font-bold hover:bg-gray-100 transition"
-                  >
-                    Открыть в 2ГИС
-                  </a>
+                    <h3 className="text-2xl font-bold">
+                      Советская ул., 64/1
+                    </h3>
+
+                    <p className="text-gray-600 mt-2">
+                      офис 553, этаж 5
+                    </p>
+
+                  </div>
 
                   <a
                     href="https://yandex.ru/maps/?text=Новосибирск%20Советская%2064%2F1"
                     target="_blank"
-                    className="block border-2 border-white text-white text-center py-5 rounded-2xl text-xl font-bold hover:bg-white hover:text-green-700 transition"
+                    className="bg-green-600 hover:bg-green-700 text-white px-6 py-4 rounded-2xl font-semibold transition text-center"
                   >
-                    Открыть в Яндекс Картах
+                    Открыть карту
                   </a>
 
                 </div>
