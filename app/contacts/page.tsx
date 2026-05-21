@@ -147,7 +147,7 @@ export default function ContactsPage() {
               <div className="relative w-full h-[500px]">
 
                 <iframe
-                  src="https://yandex.ru/map-widget/v1/?um=constructor%3A1f7d4db0d53f6a65f8d1bfa0b34a9f5b6a3b4c2f5d8e9a7b&amp;source=constructor"
+                  src="https://yandex.ru/map-widget/v1/?ll=82.920430%2C55.041191&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjkzNzQ5MxJR0KDQvtGB0YHQuNGPLCDQndC-0LLQvtGB0LjQsdC40YDRgdC6LCDQodC-0LLQtdGC0YHQutCw0Y8g0YPQu9C40YbQsCwgNjQvMSIKDWy3VkIVs2dCQg%2C%2C&z=17"
                   width="100%"
                   height="100%"
                   frameBorder="0"
