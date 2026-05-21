@@ -13,19 +13,31 @@
 
     <nav className="flex items-center gap-2 md:gap-8 text-[11px] md:text-base">
 
-      <a href="/" className="hover:text-green-600 transition">
+      <a
+        href="/"
+        className="text-slate-800 hover:text-green-600 transition font-medium"
+      >
         Главная
       </a>
 
-      <a href="/services" className="hover:text-green-600 transition">
+      <a
+        href="/services"
+        className="text-slate-800 hover:text-green-600 transition font-medium"
+      >
         Услуги
       </a>
 
-      <a href="/prices" className="hover:text-green-600 transition">
+      <a
+        href="/prices"
+        className="text-slate-800 hover:text-green-600 transition font-medium"
+      >
         Цены
       </a>
 
-      <a href="/contacts" className="hover:text-green-600 transition">
+      <a
+        href="/contacts"
+        className="text-slate-800 hover:text-green-600 transition font-medium"
+      >
         Контакты
       </a>
 
