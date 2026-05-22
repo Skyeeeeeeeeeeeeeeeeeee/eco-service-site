@@ -217,7 +217,7 @@ export default function ContactsPage() {
               <div className="bg-white rounded-[40px] p-6 md:p-10 shadow-sm hover:-translate-y-2 hover:shadow-2xl transition duration-300">
 
                 <div className="w-16 h-16 rounded-2xl bg-green-100 flex items-center justify-center text-3xl mb-8">
-                  📞
+                  
                 </div>
 
                 <p className="text-gray-500 mb-3 text-lg">
@@ -237,7 +237,7 @@ export default function ContactsPage() {
               <div className="bg-white rounded-[40px] p-6 md:p-10 shadow-sm hover:-translate-y-2 hover:shadow-2xl transition duration-300">
 
                 <div className="w-16 h-16 rounded-2xl bg-green-100 flex items-center justify-center text-3xl mb-8">
-                  📍
+                  
                 </div>
 
                 <p className="text-gray-500 mb-3 text-lg">

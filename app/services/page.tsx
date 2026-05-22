@@ -310,7 +310,7 @@ export default function ServicesPage() {
               <div>
 
                 <h3 className="text-4xl md:text-5xl font-bold mb-4 text-green-400">
-                  5+
+                  25+
                 </h3>
 
                 <p className="text-lg md:text-xl text-gray-300">
