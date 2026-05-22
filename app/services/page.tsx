@@ -247,7 +247,7 @@ export default function ServicesPage() {
               >
 
                 <div className="w-16 h-16 rounded-2xl bg-green-100 flex items-center justify-center text-3xl mb-8">
-                  🚛
+                  
                 </div>
 
                 <h2 className="text-2xl md:text-3xl font-bold mb-6">
