@@ -10,12 +10,12 @@ export default function PricesPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <main className="min-h-screen bg-[#f5f5f5] text-slate-900">
+    <main className="min-h-screen bg-[#f5f5f5] text-slate-900 overflow-hidden">
 
       {/* HEADER */}
       <header className="border-b border-gray-200 bg-white/90 backdrop-blur sticky top-0 z-50">
 
-        <div className="max-w-7xl mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-5 md:px-6 py-4 flex items-center justify-between">
 
           {/* LOGO */}
           <Link href="/" className="block">
@@ -125,7 +125,7 @@ export default function PricesPage() {
             </div>
 
             {/* LINKS */}
-            <div className="flex flex-col p-6 gap-6 text-2xl font-semibold">
+            <div className="flex flex-col p-6 gap-6 text-xl sm:text-2xl font-semibold">
 
               <Link href="/" onClick={() => setMobileMenuOpen(false)}>
                 Главная
@@ -153,7 +153,7 @@ export default function PricesPage() {
                   setIsOpen(true)
                   setMobileMenuOpen(false)
                 }}
-                className="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-2xl font-semibold text-lg transition"
+                className="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-2xl font-semibold text-base md:text-lg transition"
               >
                 Заказать
               </button>
@@ -167,19 +167,20 @@ export default function PricesPage() {
       </AnimatePresence>
 
       {/* HERO */}
-      <section className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-20">
+      <section className="max-w-7xl mx-auto px-5 md:px-6 py-14 md:py-20 overflow-hidden">
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          className="max-w-4xl"
         >
 
-          <h1 className="text-4xl md:text-7xl font-bold leading-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.05] mb-6">
             Цены на услуги
           </h1>
 
-          <p className="text-gray-600 text-lg md:text-xl max-w-3xl mb-14 md:mb-16 leading-relaxed">
+          <p className="text-gray-600 text-base sm:text-lg md:text-xl max-w-3xl mb-14 md:mb-16 leading-relaxed">
             Предлагаем выгодные тарифы на аренду,
             обслуживание и продажу биотуалетов
             в Новосибирске и области.
@@ -199,7 +200,7 @@ export default function PricesPage() {
               y: -10,
               scale: 1.02
             }}
-            className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition duration-300"
+            className="bg-white rounded-[28px] p-7 md:p-8 shadow-lg hover:shadow-2xl transition duration-300"
           >
 
             <p className="text-green-600 font-semibold mb-4">
@@ -234,7 +235,7 @@ export default function PricesPage() {
               y: -10,
               scale: 1.02
             }}
-            className="bg-white rounded-3xl p-8 shadow-lg border-4 border-green-600 hover:shadow-2xl transition duration-300"
+            className="bg-white rounded-[28px] p-7 md:p-8 shadow-lg border-4 border-green-600 hover:shadow-2xl transition duration-300"
           >
 
             <p className="text-green-600 font-semibold mb-4">
@@ -269,7 +270,7 @@ export default function PricesPage() {
               y: -10,
               scale: 1.02
             }}
-            className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition duration-300"
+            className="bg-white rounded-[28px] p-7 md:p-8 shadow-lg hover:shadow-2xl transition duration-300"
           >
 
             <p className="text-green-600 font-semibold mb-4">
@@ -300,7 +301,7 @@ export default function PricesPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-4 md:px-6 pb-16 md:pb-24">
+      <section className="px-5 md:px-6 pb-16 md:pb-24 overflow-hidden">
 
         <div className="max-w-7xl mx-auto">
 
@@ -309,21 +310,21 @@ export default function PricesPage() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="bg-green-600 rounded-[40px] md:rounded-[50px] p-10 md:p-24 text-white text-center shadow-2xl"
+            className="bg-green-600 rounded-[32px] md:rounded-[50px] p-8 md:p-24 text-white text-center shadow-2xl"
           >
 
-            <h2 className="text-4xl md:text-7xl font-bold mb-8">
+            <h2 className="text-3xl sm:text-4xl md:text-7xl font-bold mb-8">
               Нужна консультация?
             </h2>
 
-            <p className="text-xl md:text-2xl text-green-100 max-w-4xl mx-auto leading-relaxed mb-12">
+            <p className="text-base sm:text-xl md:text-2xl text-green-100 max-w-4xl mx-auto leading-relaxed mb-12">
               Поможем подобрать подходящий тариф
               под ваш объект и бюджет.
             </p>
 
             <button
               onClick={() => setIsOpen(true)}
-              className="inline-block bg-white text-green-700 hover:bg-gray-100 hover:scale-105 active:scale-95 px-8 md:px-10 py-4 md:py-5 rounded-2xl text-xl md:text-2xl font-bold transition duration-300"
+              className="inline-block bg-white text-green-700 hover:bg-gray-100 hover:scale-105 active:scale-95 px-8 md:px-10 py-4 md:py-5 rounded-2xl text-base md:text-2xl font-bold transition duration-300"
             >
               Связаться с нами
             </button>
@@ -406,9 +407,9 @@ export default function PricesPage() {
       </AnimatePresence>
 
       {/* FOOTER */}
-      <footer className="bg-slate-950 text-white mt-20">
+      <footer className="bg-slate-950 text-white mt-20 overflow-hidden">
 
-        <div className="max-w-7xl mx-auto px-4 md:px-6 py-14 grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="max-w-7xl mx-auto px-5 md:px-6 py-14 grid grid-cols-1 md:grid-cols-3 gap-10">
 
           <div>
 
@@ -416,7 +417,7 @@ export default function PricesPage() {
               Экосервис
             </h2>
 
-            <p className="text-gray-400 text-lg leading-relaxed">
+            <p className="text-gray-400 text-base md:text-lg leading-relaxed">
               Аренда, продажа и обслуживание биотуалетов
               в Новосибирске и области.
             </p>
@@ -429,7 +430,7 @@ export default function PricesPage() {
               Навигация
             </h3>
 
-            <div className="space-y-3 text-gray-400 text-lg">
+            <div className="space-y-3 text-gray-400 text-base md:text-lg">
 
               <p><Link href="/">Главная</Link></p>
               <p><Link href="/services">Услуги</Link></p>
@@ -446,7 +447,7 @@ export default function PricesPage() {
               Контакты
             </h3>
 
-            <div className="space-y-3 text-gray-400 text-lg">
+            <div className="space-y-3 text-gray-400 text-base md:text-lg">
 
               <p>+7 (383) 319-40-21</p>
               <p>Новосибирск</p>
