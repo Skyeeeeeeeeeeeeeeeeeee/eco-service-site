@@ -13,14 +13,14 @@ export default function HomePage() {
     <main className="min-h-screen bg-[#f5f5f5] text-slate-900 overflow-hidden">
 
       {/* HEADER */}
-      <header className="border-b border-gray-200 bg-white/90 backdrop-blur sticky top-0 z-50">
+      <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/70 border-b border-white/40">
 
-        <div className="max-w-7xl mx-auto px-5 md:px-6 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-5 md:px-6 py-5 flex items-center justify-between">
 
           {/* LOGO */}
           <Link href="/" className="block">
 
-            <h2 className="text-2xl md:text-3xl font-bold text-green-600">
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
               Экосервис
             </h2>
 
@@ -31,32 +31,32 @@ export default function HomePage() {
           </Link>
 
           {/* NAVIGATION */}
-          <nav className="hidden md:flex items-center gap-10">
+          <nav className="hidden md:flex items-center gap-10 text-[15px] font-medium">
 
             <Link
               href="/"
-              className="text-green-600 font-semibold hover:scale-105 transition"
+              className="text-slate-950 hover:opacity-60 transition"
             >
               Главная
             </Link>
 
             <Link
               href="/services"
-              className="hover:text-green-600 hover:scale-105 transition"
+              className="hover:opacity-60 transition"
             >
               Услуги
             </Link>
 
             <Link
               href="/prices"
-              className="hover:text-green-600 hover:scale-105 transition"
+              className="hover:opacity-60 transition"
             >
               Цены
             </Link>
 
             <Link
               href="/contacts"
-              className="hover:text-green-600 hover:scale-105 transition"
+              className="hover:opacity-60 transition"
             >
               Контакты
             </Link>
@@ -64,26 +64,22 @@ export default function HomePage() {
           </nav>
 
           {/* BUTTON */}
-          <div className="hidden md:flex items-center gap-4">
-
-            <button
-              onClick={() => setIsOpen(true)}
-              className="bg-green-600 hover:bg-green-700 hover:scale-[1.03] active:scale-95 text-white px-6 py-3 rounded-2xl font-medium transition duration-300"
-            >
-              Заказать
-            </button>
-
-          </div>
+          <button
+            onClick={() => setIsOpen(true)}
+            className="hidden md:flex bg-slate-950 hover:bg-black text-white px-6 py-3 rounded-2xl text-sm font-semibold transition-all duration-300 hover:scale-[1.02] active:scale-95"
+          >
+            Оставить заявку
+          </button>
 
           {/* MOBILE BURGER */}
           <button
             onClick={() => setMobileMenuOpen(true)}
-            className="md:hidden flex flex-col gap-1"
+            className="md:hidden flex flex-col gap-1.5"
           >
 
-            <span className="w-6 h-0.5 bg-black"></span>
-            <span className="w-6 h-0.5 bg-black"></span>
-            <span className="w-6 h-0.5 bg-black"></span>
+            <span className="w-6 h-0.5 bg-black rounded-full"></span>
+            <span className="w-6 h-0.5 bg-black rounded-full"></span>
+            <span className="w-6 h-0.5 bg-black rounded-full"></span>
 
           </button>
 
@@ -100,16 +96,16 @@ export default function HomePage() {
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-white z-50 flex flex-col"
+            transition={{ duration: 0.35 }}
+            className="fixed inset-0 bg-[#f5f5f5] z-50 flex flex-col"
           >
 
             {/* TOP */}
-            <div className="flex items-center justify-between px-6 py-6 border-b">
+            <div className="flex items-center justify-between px-6 py-6 border-b border-gray-200">
 
               <div>
 
-                <h2 className="text-2xl font-bold text-green-600">
+                <h2 className="text-2xl font-bold">
                   Экосервис
                 </h2>
 
@@ -129,21 +125,33 @@ export default function HomePage() {
             </div>
 
             {/* LINKS */}
-            <div className="flex flex-col p-6 gap-6 text-xl sm:text-2xl font-semibold">
+            <div className="flex flex-col px-6 py-10 gap-8 text-3xl font-bold tracking-tight">
 
-              <Link href="/" onClick={() => setMobileMenuOpen(false)}>
+              <Link
+                href="/"
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 Главная
               </Link>
 
-              <Link href="/services" onClick={() => setMobileMenuOpen(false)}>
+              <Link
+                href="/services"
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 Услуги
               </Link>
 
-              <Link href="/prices" onClick={() => setMobileMenuOpen(false)}>
+              <Link
+                href="/prices"
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 Цены
               </Link>
 
-              <Link href="/contacts" onClick={() => setMobileMenuOpen(false)}>
+              <Link
+                href="/contacts"
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 Контакты
               </Link>
 
@@ -157,9 +165,9 @@ export default function HomePage() {
                   setIsOpen(true)
                   setMobileMenuOpen(false)
                 }}
-                className="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-2xl font-semibold text-base md:text-lg transition"
+                className="w-full bg-slate-950 text-white py-4 rounded-2xl text-lg font-semibold"
               >
-                Заказать
+                Оставить заявку
               </button>
 
             </div>
@@ -170,279 +178,439 @@ export default function HomePage() {
 
       </AnimatePresence>
 
-      {/* HERO */}
-      <section className="max-w-7xl mx-auto px-5 md:px-6 py-14 md:py-24 overflow-hidden">
+      {/* PREMIUM HERO */}
+      <section className="relative overflow-hidden">
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+        {/* BACKGROUND */}
+        <div className="absolute top-[-250px] right-[-200px] w-[600px] h-[600px] bg-green-200 rounded-full blur-3xl opacity-30" />
 
-          {/* LEFT */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="max-w-[95vw]"
-          >
+        <div className="absolute bottom-[-250px] left-[-200px] w-[500px] h-[500px] bg-emerald-100 rounded-full blur-3xl opacity-30" />
 
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.05] mb-6">
+        <div className="max-w-7xl mx-auto px-5 md:px-6 pt-16 md:pt-28 pb-20 md:pb-32 relative z-10">
 
-              Биотуалеты
-              <br />
+          <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-14 items-center">
 
-              для стройки,
-              <br />
+            {/* LEFT */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
 
-              мероприятий
-              <br />
+              {/* LABEL */}
+              <div className="inline-flex items-center gap-3 bg-white/90 backdrop-blur-xl border border-white rounded-full px-5 py-3 shadow-lg mb-8">
 
-              и бизнеса
+                <div className="w-2 h-2 rounded-full bg-green-600" />
 
-            </h1>
-
-            <p className="text-gray-600 text-base sm:text-lg md:text-2xl leading-relaxed mb-10 max-w-2xl">
-
-              ООО «ЭкоСервис Новосибирск»
-              предоставляет аренду,
-              обслуживание и продажу
-              туалетных кабин
-              по Новосибирску и области.
-
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
-
-              <button
-                onClick={() => setIsOpen(true)}
-                className="bg-green-600 hover:bg-green-700 hover:scale-[1.02] active:scale-95 text-white px-8 py-4 rounded-2xl text-base md:text-lg font-semibold transition-all duration-300"
-              >
-                Оставить заявку
-              </button>
-
-              <Link
-                href="/services"
-                className="border border-gray-300 hover:border-green-600 hover:text-green-600 px-8 py-4 rounded-2xl text-base md:text-lg font-medium transition-all duration-300 text-center"
-              >
-                Смотреть услуги
-              </Link>
-
-            </div>
-
-            {/* STATS */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-
-              <div className="bg-white rounded-2xl p-5 shadow">
-
-                <h3 className="text-3xl font-bold text-green-600">
-                  5+
-                </h3>
-
-                <p className="text-gray-600 text-sm mt-2">
-                  лет опыта
+                <p className="text-sm tracking-[0.2em] font-medium text-gray-600 uppercase">
+                  Экосервис Новосибирск
                 </p>
 
               </div>
 
-              <div className="bg-white rounded-2xl p-5 shadow">
+              {/* TITLE */}
+              <h1 className="text-[46px] sm:text-[62px] md:text-[88px] leading-[0.92] tracking-[-0.05em] font-bold text-slate-950 mb-8">
 
-                <h3 className="text-3xl font-bold text-green-600">
-                  1000+
-                </h3>
+                Аренда
+                <br />
 
-                <p className="text-gray-600 text-sm mt-2">
-                  обслуженных объектов
-                </p>
+                современных
+                <br />
+
+                биотуалетов
+
+              </h1>
+
+              {/* DESCRIPTION */}
+              <p className="text-gray-600 text-lg md:text-2xl leading-relaxed max-w-2xl mb-12">
+
+                Решения для стройки,
+                мероприятий и бизнеса.
+                Доставка, обслуживание
+                и поддержка по Новосибирску
+                и области.
+
+              </p>
+
+              {/* BUTTONS */}
+              <div className="flex flex-col sm:flex-row gap-4 mb-16">
+
+                <button
+                  onClick={() => setIsOpen(true)}
+                  className="bg-slate-950 hover:bg-black text-white px-8 py-5 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-2xl"
+                >
+                  Оставить заявку
+                </button>
+
+                <Link
+                  href="/services"
+                  className="bg-white/80 backdrop-blur-xl border border-white hover:border-slate-300 px-8 py-5 rounded-2xl text-lg font-medium transition-all duration-300 text-center shadow-lg"
+                >
+                  Смотреть услуги
+                </Link>
 
               </div>
 
-              <div className="bg-white rounded-2xl p-5 shadow">
+              {/* STATS */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
 
-                <h3 className="text-3xl font-bold text-green-600">
-                  24/7
-                </h3>
+                <div className="bg-white/70 backdrop-blur-2xl border border-white rounded-[28px] p-6 shadow-xl">
 
-                <p className="text-gray-600 text-sm mt-2">
-                  поддержка клиентов
-                </p>
+                  <h3 className="text-4xl font-bold mb-2">
+                    5+
+                  </h3>
+
+                  <p className="text-gray-600 leading-relaxed">
+                    лет опыта
+                  </p>
+
+                </div>
+
+                <div className="bg-white/70 backdrop-blur-2xl border border-white rounded-[28px] p-6 shadow-xl">
+
+                  <h3 className="text-4xl font-bold mb-2">
+                    1000+
+                  </h3>
+
+                  <p className="text-gray-600 leading-relaxed">
+                    объектов обслужено
+                  </p>
+
+                </div>
+
+                <div className="bg-white/70 backdrop-blur-2xl border border-white rounded-[28px] p-6 shadow-xl">
+
+                  <h3 className="text-4xl font-bold mb-2">
+                    24/7
+                  </h3>
+
+                  <p className="text-gray-600 leading-relaxed">
+                    поддержка клиентов
+                  </p>
+
+                </div>
 
               </div>
 
-            </div>
+            </motion.div>
 
-          </motion.div>
+            {/* RIGHT */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.92 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
 
-          {/* RIGHT */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7 }}
-            className="w-full"
-          >
+              {/* IMAGE BLOCK */}
+              <div className="relative rounded-[42px] overflow-hidden bg-white border border-white shadow-2xl">
 
-            <div className="bg-green-100 rounded-[32px] min-h-[280px] sm:min-h-[350px] md:min-h-[600px] flex items-center justify-center shadow-xl overflow-hidden">
+                <div className="relative h-[420px] sm:h-[520px] md:h-[760px] overflow-hidden bg-gradient-to-br from-green-100 to-emerald-50 flex items-center justify-center">
 
-              <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-green-700 text-center px-6">
-                Фото биотуалета
-              </h2>
+                  <div className="absolute top-[-80px] right-[-80px] w-[260px] h-[260px] rounded-full bg-green-300 blur-3xl opacity-40" />
 
-            </div>
+                  <div className="absolute bottom-[-100px] left-[-100px] w-[260px] h-[260px] rounded-full bg-emerald-200 blur-3xl opacity-40" />
 
-          </motion.div>
+                  <div className="relative z-10 text-center px-6">
+
+                    <p className="uppercase tracking-[0.3em] text-green-700 text-sm mb-5 font-medium">
+                      Экосервис
+                    </p>
+
+                    <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight tracking-tight">
+
+                      Фото
+                      <br />
+
+                      биотуалета
+
+                    </h2>
+
+                  </div>
+
+                </div>
+
+                {/* FLOATING CARD */}
+                <div className="absolute bottom-6 left-6 right-6 bg-white/80 backdrop-blur-2xl border border-white rounded-[28px] p-5 shadow-2xl">
+
+                  <div className="flex items-center justify-between gap-5">
+
+                    <div>
+
+                      <p className="text-sm text-gray-500 mb-1">
+                        Работаем по Новосибирску
+                      </p>
+
+                      <h3 className="text-xl font-bold">
+                        Доставка и обслуживание
+                      </h3>
+
+                    </div>
+
+                    <div className="w-12 h-12 rounded-2xl bg-slate-950 text-white flex items-center justify-center text-xl font-bold shadow-xl">
+                      →
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </motion.div>
+
+          </div>
 
         </div>
 
       </section>
 
       {/* SERVICES */}
-      <section className="max-w-7xl mx-auto px-5 md:px-6 py-16 md:py-24 overflow-hidden">
+      <section className="py-24 md:py-32">
 
-        <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6">
-          Наши услуги
-        </h2>
+        <div className="max-w-7xl mx-auto px-5 md:px-6">
 
-        <p className="text-gray-600 text-base sm:text-lg mb-14 max-w-3xl leading-relaxed">
-          Предоставляем полный спектр услуг
-          по аренде, продаже
-          и обслуживанию биотуалетов.
-        </p>
+          <div className="max-w-4xl mb-16">
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <p className="uppercase tracking-[0.25em] text-sm text-gray-500 mb-5">
+              Наши услуги
+            </p>
 
-          {/* CARD 1 */}
-          <motion.div
-            whileHover={{
-              y: -10,
-              scale: 1.02
-            }}
-            className="bg-white rounded-[28px] p-7 md:p-10 shadow-lg transition-all duration-300"
-          >
+            <h2 className="text-4xl md:text-7xl font-bold tracking-[-0.05em] leading-[0.95] mb-8">
 
-            <h3 className="text-2xl md:text-3xl font-bold leading-tight mb-6">
-              Аренда
+              Полный сервис
               <br />
-              биотуалетов
-            </h3>
 
-            <p className="text-gray-600 text-base md:text-xl leading-relaxed">
-              Краткосрочная и долгосрочная аренда кабин
-              для стройплощадок,
-              мероприятий и частных объектов.
+              для вашего объекта
+
+            </h2>
+
+            <p className="text-gray-600 text-lg md:text-2xl leading-relaxed max-w-3xl">
+
+              Предоставляем аренду,
+              продажу и обслуживание
+              биотуалетов для любых задач.
+
             </p>
 
-          </motion.div>
+          </div>
 
-          {/* CARD 2 */}
-          <motion.div
-            whileHover={{
-              y: -10,
-              scale: 1.02
-            }}
-            className="bg-white rounded-[28px] p-7 md:p-10 shadow-lg transition-all duration-300"
-          >
+          {/* CARDS */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-            <h3 className="text-2xl md:text-3xl font-bold leading-tight mb-6">
-              Продажа кабин
-            </h3>
+            <motion.div
+              whileHover={{
+                y: -10
+              }}
+              className="group bg-white/70 backdrop-blur-2xl border border-white rounded-[36px] p-8 md:p-10 shadow-xl transition-all duration-500"
+            >
 
-            <p className="text-gray-600 text-base md:text-xl leading-relaxed">
-              Продажа новых и обслуженных туалетных кабин
-              для бизнеса и частного использования.
-            </p>
+              <div className="w-14 h-14 rounded-2xl bg-green-100 mb-10" />
 
-          </motion.div>
+              <h3 className="text-3xl font-bold tracking-tight mb-6">
 
-          {/* CARD 3 */}
-          <motion.div
-            whileHover={{
-              y: -10,
-              scale: 1.02
-            }}
-            className="bg-white rounded-[28px] p-7 md:p-10 shadow-lg transition-all duration-300"
-          >
+                Аренда
+                <br />
 
-            <h3 className="text-2xl md:text-3xl font-bold leading-tight mb-6">
-              Обслуживание
-            </h3>
+                кабин
 
-            <p className="text-gray-600 text-base md:text-xl leading-relaxed">
-              Очистка, дезинфекция
-              и регулярное техническое обслуживание кабин.
-            </p>
+              </h3>
 
-          </motion.div>
+              <p className="text-gray-600 text-lg leading-relaxed">
+
+                Краткосрочная
+                и долгосрочная аренда
+                биотуалетов.
+
+              </p>
+
+            </motion.div>
+
+            <motion.div
+              whileHover={{
+                y: -10
+              }}
+              className="group bg-slate-950 text-white rounded-[36px] p-8 md:p-10 shadow-2xl transition-all duration-500"
+            >
+
+              <div className="w-14 h-14 rounded-2xl bg-white/10 mb-10" />
+
+              <h3 className="text-3xl font-bold tracking-tight mb-6">
+                Обслуживание
+              </h3>
+
+              <p className="text-gray-300 text-lg leading-relaxed">
+
+                Регулярная очистка,
+                дезинфекция
+                и технический сервис.
+
+              </p>
+
+            </motion.div>
+
+            <motion.div
+              whileHover={{
+                y: -10
+              }}
+              className="group bg-white/70 backdrop-blur-2xl border border-white rounded-[36px] p-8 md:p-10 shadow-xl transition-all duration-500"
+            >
+
+              <div className="w-14 h-14 rounded-2xl bg-green-100 mb-10" />
+
+              <h3 className="text-3xl font-bold tracking-tight mb-6">
+
+                Продажа
+                <br />
+
+                кабин
+
+              </h3>
+
+              <p className="text-gray-600 text-lg leading-relaxed">
+
+                Продажа новых
+                и обслуженных
+                биотуалетов.
+
+              </p>
+
+            </motion.div>
+
+          </div>
 
         </div>
 
       </section>
 
       {/* CTA */}
-      <section className="px-5 md:px-6 pb-20">
+      <section className="pb-24 md:pb-32">
 
-        <div className="max-w-6xl mx-auto bg-green-600 rounded-[32px] md:rounded-[40px] py-14 md:py-20 px-6 text-center text-white shadow-2xl">
+        <div className="max-w-7xl mx-auto px-5 md:px-6">
 
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-8">
-            Нужны биотуалеты?
-          </h2>
-
-          <p className="text-base sm:text-xl md:text-2xl mb-10 text-green-50 max-w-3xl mx-auto leading-relaxed">
-            Оставьте заявку и мы подберём лучшее решение под ваш объект.
-          </p>
-
-          <button
-            onClick={() => setIsOpen(true)}
-            className="bg-white text-green-600 hover:bg-green-50 hover:scale-[1.03] active:scale-95 px-8 md:px-10 py-4 md:py-5 rounded-2xl text-base md:text-xl font-bold transition-all duration-300"
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="relative overflow-hidden bg-slate-950 rounded-[42px] md:rounded-[56px] p-8 md:p-24 text-white shadow-2xl"
           >
-            Оставить заявку
-          </button>
+
+            <div className="absolute top-[-120px] right-[-120px] w-[320px] h-[320px] bg-green-500 rounded-full blur-3xl opacity-20" />
+
+            <div className="absolute bottom-[-120px] left-[-120px] w-[320px] h-[320px] bg-emerald-400 rounded-full blur-3xl opacity-20" />
+
+            <div className="relative z-10 text-center">
+
+              <p className="uppercase tracking-[0.3em] text-green-300 text-sm mb-6">
+                Экосервис
+              </p>
+
+              <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-[-0.05em] leading-[0.95] mb-8">
+
+                Нужны
+                <br />
+
+                биотуалеты?
+
+              </h2>
+
+              <p className="text-gray-300 text-lg md:text-2xl leading-relaxed max-w-3xl mx-auto mb-12">
+
+                Подберём оптимальное решение
+                под ваш объект,
+                мероприятие или бизнес.
+
+              </p>
+
+              <button
+                onClick={() => setIsOpen(true)}
+                className="bg-white text-slate-950 hover:bg-gray-100 px-8 md:px-10 py-5 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-2xl"
+              >
+                Оставить заявку
+              </button>
+
+            </div>
+
+          </motion.div>
 
         </div>
 
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-slate-950 text-white">
+      <footer className="border-t border-gray-200 bg-white/70 backdrop-blur-xl">
 
-        <div className="max-w-7xl mx-auto px-5 md:px-6 py-14 grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="max-w-7xl mx-auto px-5 md:px-6 py-16">
 
-          <div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
 
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Экосервис
-            </h2>
+            <div>
 
-            <p className="text-gray-400 text-base md:text-xl leading-relaxed">
-              Аренда, продажа и обслуживание биотуалетов
-              в Новосибирске и области.
-            </p>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-5">
+                Экосервис
+              </h2>
 
-          </div>
+              <p className="text-gray-600 text-lg leading-relaxed max-w-md">
 
-          <div>
+                Аренда,
+                продажа и обслуживание
+                биотуалетов
+                в Новосибирске и области.
 
-            <h3 className="text-2xl md:text-3xl font-semibold mb-6">
-              Навигация
-            </h3>
-
-            <div className="space-y-4 text-gray-400 text-base md:text-xl">
-
-              <p><Link href="/">Главная</Link></p>
-              <p><Link href="/services">Услуги</Link></p>
-              <p><Link href="/prices">Цены</Link></p>
-              <p><Link href="/contacts">Контакты</Link></p>
+              </p>
 
             </div>
 
-          </div>
+            <div>
 
-          <div>
+              <h3 className="text-xl font-bold mb-6">
+                Навигация
+              </h3>
 
-            <h3 className="text-2xl md:text-3xl font-semibold mb-6">
-              Контакты
-            </h3>
+              <div className="flex flex-col gap-4 text-gray-600 text-lg">
 
-            <div className="space-y-4 text-gray-400 text-base md:text-xl">
+                <Link href="/" className="hover:text-black transition">
+                  Главная
+                </Link>
 
-              <p>+7 (383) 319-40-21</p>
-              <p>Новосибирск</p>
-              <p>Советская ул., 64/1</p>
+                <Link href="/services" className="hover:text-black transition">
+                  Услуги
+                </Link>
+
+                <Link href="/prices" className="hover:text-black transition">
+                  Цены
+                </Link>
+
+                <Link href="/contacts" className="hover:text-black transition">
+                  Контакты
+                </Link>
+
+              </div>
+
+            </div>
+
+            <div>
+
+              <h3 className="text-xl font-bold mb-6">
+                Контакты
+              </h3>
+
+              <div className="flex flex-col gap-4 text-gray-600 text-lg">
+
+                <p>
+                  +7 (383) 319-40-21
+                </p>
+
+                <p>
+                  Новосибирск
+                </p>
+
+                <p>
+                  Советская ул., 64/1
+                </p>
+
+              </div>
 
             </div>
 
@@ -466,7 +634,7 @@ export default function HomePage() {
 
             <motion.div
               initial={{
-                scale: 0.8,
+                scale: 0.85,
                 opacity: 0
               }}
               animate={{
@@ -474,7 +642,7 @@ export default function HomePage() {
                 opacity: 1
               }}
               exit={{
-                scale: 0.8,
+                scale: 0.85,
                 opacity: 0
               }}
               transition={{
@@ -482,17 +650,22 @@ export default function HomePage() {
                 stiffness: 260,
                 damping: 20
               }}
-              className="relative bg-white rounded-3xl p-6 md:p-8 w-full max-w-md shadow-2xl"
+              className="relative bg-white rounded-[36px] p-6 md:p-8 w-full max-w-md shadow-2xl"
             >
 
+              {/* CLOSE */}
               <button
                 onClick={() => setIsOpen(false)}
-                className="absolute top-4 right-4 text-3xl text-gray-400 hover:text-black transition"
+                className="absolute top-5 right-5 text-3xl text-gray-400 hover:text-black transition"
               >
                 ×
               </button>
 
-              <h2 className="text-2xl md:text-3xl font-bold mb-6">
+              <p className="uppercase tracking-[0.25em] text-sm text-gray-500 mb-4">
+                Экосервис
+              </p>
+
+              <h2 className="text-3xl font-bold tracking-tight mb-8">
                 Оставить заявку
               </h2>
 
@@ -501,22 +674,22 @@ export default function HomePage() {
                 <input
                   type="text"
                   placeholder="Ваше имя"
-                  className="w-full border border-gray-300 rounded-xl px-4 py-3 outline-none focus:border-green-600"
+                  className="w-full bg-[#f5f5f5] border border-gray-200 rounded-2xl px-5 py-4 outline-none focus:border-slate-950 transition"
                 />
 
                 <input
                   type="tel"
                   placeholder="Ваш телефон"
-                  className="w-full border border-gray-300 rounded-xl px-4 py-3 outline-none focus:border-green-600"
+                  className="w-full bg-[#f5f5f5] border border-gray-200 rounded-2xl px-5 py-4 outline-none focus:border-slate-950 transition"
                 />
 
                 <textarea
                   placeholder="Комментарий"
-                  className="w-full border border-gray-300 rounded-xl px-4 py-3 outline-none focus:border-green-600 min-h-[120px]"
+                  className="w-full bg-[#f5f5f5] border border-gray-200 rounded-2xl px-5 py-4 outline-none focus:border-slate-950 transition min-h-[140px]"
                 />
 
                 <button
-                  className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl font-semibold transition"
+                  className="w-full bg-slate-950 hover:bg-black text-white py-4 rounded-2xl font-semibold transition-all duration-300 hover:scale-[1.01]"
                 >
                   Отправить
                 </button>
