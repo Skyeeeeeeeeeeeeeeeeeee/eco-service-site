@@ -3,6 +3,11 @@
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import { useState } from "react"
+import {
+  ShieldCheck,
+  Truck,
+  Sparkles
+} from "lucide-react"
 
 export default function HomePage() {
 
@@ -10,7 +15,10 @@ export default function HomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <main className="min-h-screen bg-[#f5f5f5] text-slate-900 overflow-hidden">
+    <main className="min-h-screen bg-[#f5f5f5] text-slate-900 overflow-hidden relative">
+
+      {/* GRAIN */}
+      <div className="pointer-events-none fixed inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
 
       {/* HEADER */}
       <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/70 border-b border-white/40">
@@ -66,7 +74,7 @@ export default function HomePage() {
           {/* BUTTON */}
           <button
             onClick={() => setIsOpen(true)}
-            className="hidden md:flex bg-slate-950 hover:bg-black text-white px-6 py-3 rounded-2xl text-sm font-semibold transition-all duration-300 hover:scale-[1.02] active:scale-95"
+            className="hidden md:flex bg-slate-950 hover:bg-black text-white px-6 py-3 rounded-2xl text-sm font-semibold transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-xl"
           >
             Оставить заявку
           </button>
@@ -127,31 +135,19 @@ export default function HomePage() {
             {/* LINKS */}
             <div className="flex flex-col px-6 py-10 gap-8 text-3xl font-bold tracking-tight">
 
-              <Link
-                href="/"
-                onClick={() => setMobileMenuOpen(false)}
-              >
+              <Link href="/" onClick={() => setMobileMenuOpen(false)}>
                 Главная
               </Link>
 
-              <Link
-                href="/services"
-                onClick={() => setMobileMenuOpen(false)}
-              >
+              <Link href="/services" onClick={() => setMobileMenuOpen(false)}>
                 Услуги
               </Link>
 
-              <Link
-                href="/prices"
-                onClick={() => setMobileMenuOpen(false)}
-              >
+              <Link href="/prices" onClick={() => setMobileMenuOpen(false)}>
                 Цены
               </Link>
 
-              <Link
-                href="/contacts"
-                onClick={() => setMobileMenuOpen(false)}
-              >
+              <Link href="/contacts" onClick={() => setMobileMenuOpen(false)}>
                 Контакты
               </Link>
 
@@ -178,10 +174,10 @@ export default function HomePage() {
 
       </AnimatePresence>
 
-      {/* PREMIUM HERO */}
+      {/* HERO */}
       <section className="relative overflow-hidden">
 
-        {/* BACKGROUND */}
+        {/* BLURS */}
         <div className="absolute top-[-250px] right-[-200px] w-[600px] h-[600px] bg-green-200 rounded-full blur-3xl opacity-30" />
 
         <div className="absolute bottom-[-250px] left-[-200px] w-[500px] h-[500px] bg-emerald-100 rounded-full blur-3xl opacity-30" />
@@ -302,33 +298,16 @@ export default function HomePage() {
               className="relative"
             >
 
-              {/* IMAGE BLOCK */}
-              <div className="relative rounded-[42px] overflow-hidden bg-white border border-white shadow-2xl">
+              <div className="relative rounded-[42px] overflow-hidden shadow-2xl">
 
-                <div className="relative h-[420px] sm:h-[520px] md:h-[760px] overflow-hidden bg-gradient-to-br from-green-100 to-emerald-50 flex items-center justify-center">
+                <img
+                  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop"
+                  alt="Биотуалеты"
+                  className="w-full h-[420px] sm:h-[520px] md:h-[760px] object-cover"
+                />
 
-                  <div className="absolute top-[-80px] right-[-80px] w-[260px] h-[260px] rounded-full bg-green-300 blur-3xl opacity-40" />
-
-                  <div className="absolute bottom-[-100px] left-[-100px] w-[260px] h-[260px] rounded-full bg-emerald-200 blur-3xl opacity-40" />
-
-                  <div className="relative z-10 text-center px-6">
-
-                    <p className="uppercase tracking-[0.3em] text-green-700 text-sm mb-5 font-medium">
-                      Экосервис
-                    </p>
-
-                    <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight tracking-tight">
-
-                      Фото
-                      <br />
-
-                      биотуалета
-
-                    </h2>
-
-                  </div>
-
-                </div>
+                {/* OVERLAY */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
 
                 {/* FLOATING CARD */}
                 <div className="absolute bottom-6 left-6 right-6 bg-white/80 backdrop-blur-2xl border border-white rounded-[28px] p-5 shadow-2xl">
@@ -347,8 +326,8 @@ export default function HomePage() {
 
                     </div>
 
-                    <div className="w-12 h-12 rounded-2xl bg-slate-950 text-white flex items-center justify-center text-xl font-bold shadow-xl">
-                      →
+                    <div className="w-12 h-12 rounded-2xl bg-slate-950 text-white flex items-center justify-center shadow-xl">
+                      <Truck size={22} />
                     </div>
 
                   </div>
@@ -356,6 +335,97 @@ export default function HomePage() {
                 </div>
 
               </div>
+
+            </motion.div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* FEATURES */}
+      <section className="pb-20 md:pb-28">
+
+        <div className="max-w-7xl mx-auto px-5 md:px-6">
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <motion.div
+              whileHover={{ y: -10 }}
+              className="bg-white/70 backdrop-blur-2xl border border-white rounded-[36px] p-8 md:p-10 shadow-xl"
+            >
+
+              <div className="w-14 h-14 rounded-2xl bg-green-100 flex items-center justify-center mb-8">
+
+                <ShieldCheck
+                  size={28}
+                  className="text-green-700"
+                />
+
+              </div>
+
+              <h3 className="text-3xl font-bold tracking-tight mb-5">
+                Надёжность
+              </h3>
+
+              <p className="text-gray-600 text-lg leading-relaxed">
+                Регулярное обслуживание
+                и качественные кабины
+                для любых задач.
+              </p>
+
+            </motion.div>
+
+            <motion.div
+              whileHover={{ y: -10 }}
+              className="bg-slate-950 text-white rounded-[36px] p-8 md:p-10 shadow-2xl"
+            >
+
+              <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-8">
+
+                <Truck
+                  size={28}
+                  className="text-white"
+                />
+
+              </div>
+
+              <h3 className="text-3xl font-bold tracking-tight mb-5">
+                Быстрая доставка
+              </h3>
+
+              <p className="text-gray-300 text-lg leading-relaxed">
+                Доставка и установка
+                по Новосибирску
+                и области.
+              </p>
+
+            </motion.div>
+
+            <motion.div
+              whileHover={{ y: -10 }}
+              className="bg-white/70 backdrop-blur-2xl border border-white rounded-[36px] p-8 md:p-10 shadow-xl"
+            >
+
+              <div className="w-14 h-14 rounded-2xl bg-green-100 flex items-center justify-center mb-8">
+
+                <Sparkles
+                  size={28}
+                  className="text-green-700"
+                />
+
+              </div>
+
+              <h3 className="text-3xl font-bold tracking-tight mb-5">
+                Чистота
+              </h3>
+
+              <p className="text-gray-600 text-lg leading-relaxed">
+                Современное обслуживание,
+                дезинфекция
+                и контроль качества.
+              </p>
 
             </motion.div>
 
@@ -395,13 +465,10 @@ export default function HomePage() {
 
           </div>
 
-          {/* CARDS */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
             <motion.div
-              whileHover={{
-                y: -10
-              }}
+              whileHover={{ y: -10 }}
               className="group bg-white/70 backdrop-blur-2xl border border-white rounded-[36px] p-8 md:p-10 shadow-xl transition-all duration-500"
             >
 
@@ -427,9 +494,7 @@ export default function HomePage() {
             </motion.div>
 
             <motion.div
-              whileHover={{
-                y: -10
-              }}
+              whileHover={{ y: -10 }}
               className="group bg-slate-950 text-white rounded-[36px] p-8 md:p-10 shadow-2xl transition-all duration-500"
             >
 
@@ -450,9 +515,7 @@ export default function HomePage() {
             </motion.div>
 
             <motion.div
-              whileHover={{
-                y: -10
-              }}
+              whileHover={{ y: -10 }}
               className="group bg-white/70 backdrop-blur-2xl border border-white rounded-[36px] p-8 md:p-10 shadow-xl transition-all duration-500"
             >
 
@@ -653,7 +716,6 @@ export default function HomePage() {
               className="relative bg-white rounded-[36px] p-6 md:p-8 w-full max-w-md shadow-2xl"
             >
 
-              {/* CLOSE */}
               <button
                 onClick={() => setIsOpen(false)}
                 className="absolute top-5 right-5 text-3xl text-gray-400 hover:text-black transition"
