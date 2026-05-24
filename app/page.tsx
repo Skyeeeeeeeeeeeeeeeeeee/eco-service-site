@@ -17,9 +17,6 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-[#f5f5f5] text-slate-900 overflow-hidden relative">
 
-      {/* GRAIN */}
-      <div className="pointer-events-none fixed inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
-
       {/* HEADER */}
       <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/70 border-b border-white/40">
 
@@ -177,14 +174,14 @@ export default function HomePage() {
       {/* HERO */}
       <section className="relative overflow-hidden">
 
-        {/* BLURS */}
-        <div className="absolute top-[-250px] right-[-200px] w-[600px] h-[600px] bg-green-200 rounded-full blur-3xl opacity-30" />
+        {/* BACKGROUND */}
+        <div className="absolute top-[-250px] right-[-200px] w-[600px] h-[600px] bg-green-200 rounded-full blur-3xl opacity-20" />
 
-        <div className="absolute bottom-[-250px] left-[-200px] w-[500px] h-[500px] bg-emerald-100 rounded-full blur-3xl opacity-30" />
+        <div className="absolute bottom-[-250px] left-[-200px] w-[500px] h-[500px] bg-emerald-100 rounded-full blur-3xl opacity-20" />
 
         <div className="max-w-7xl mx-auto px-5 md:px-6 pt-16 md:pt-28 pb-20 md:pb-32 relative z-10">
 
-          <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-14 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-16 items-center">
 
             {/* LEFT */}
             <motion.div
@@ -194,7 +191,7 @@ export default function HomePage() {
             >
 
               {/* LABEL */}
-              <div className="inline-flex items-center gap-3 bg-white/90 backdrop-blur-xl border border-white rounded-full px-5 py-3 shadow-lg mb-8">
+              <div className="inline-flex items-center gap-3 bg-white border border-gray-200 rounded-full px-5 py-3 shadow-sm mb-8">
 
                 <div className="w-2 h-2 rounded-full bg-green-600" />
 
@@ -205,7 +202,7 @@ export default function HomePage() {
               </div>
 
               {/* TITLE */}
-              <h1 className="text-[46px] sm:text-[62px] md:text-[88px] leading-[0.92] tracking-[-0.05em] font-bold text-slate-950 mb-8">
+              <h1 className="text-[46px] sm:text-[64px] md:text-[92px] leading-[0.9] tracking-[-0.06em] font-bold text-slate-950 mb-8">
 
                 Аренда
                 <br />
@@ -233,14 +230,14 @@ export default function HomePage() {
 
                 <button
                   onClick={() => setIsOpen(true)}
-                  className="bg-slate-950 hover:bg-black text-white px-8 py-5 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-2xl"
+                  className="bg-slate-950 hover:bg-black text-white px-8 py-5 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-xl"
                 >
                   Оставить заявку
                 </button>
 
                 <Link
                   href="/services"
-                  className="bg-white/80 backdrop-blur-xl border border-white hover:border-slate-300 px-8 py-5 rounded-2xl text-lg font-medium transition-all duration-300 text-center shadow-lg"
+                  className="bg-white border border-gray-200 hover:border-slate-400 px-8 py-5 rounded-2xl text-lg font-medium transition-all duration-300 text-center"
                 >
                   Смотреть услуги
                 </Link>
@@ -250,7 +247,7 @@ export default function HomePage() {
               {/* STATS */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
 
-                <div className="bg-white/70 backdrop-blur-2xl border border-white rounded-[28px] p-6 shadow-xl">
+                <div className="bg-white border border-gray-200 rounded-[28px] p-6">
 
                   <h3 className="text-4xl font-bold mb-2">
                     5+
@@ -262,7 +259,7 @@ export default function HomePage() {
 
                 </div>
 
-                <div className="bg-white/70 backdrop-blur-2xl border border-white rounded-[28px] p-6 shadow-xl">
+                <div className="bg-white border border-gray-200 rounded-[28px] p-6">
 
                   <h3 className="text-4xl font-bold mb-2">
                     1000+
@@ -274,7 +271,7 @@ export default function HomePage() {
 
                 </div>
 
-                <div className="bg-white/70 backdrop-blur-2xl border border-white rounded-[28px] p-6 shadow-xl">
+                <div className="bg-white border border-gray-200 rounded-[28px] p-6">
 
                   <h3 className="text-4xl font-bold mb-2">
                     24/7
@@ -292,49 +289,109 @@ export default function HomePage() {
 
             {/* RIGHT */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.92 }}
+              initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.9 }}
               className="relative"
             >
 
-              <div className="relative rounded-[42px] overflow-hidden shadow-2xl">
+              {/* MAIN IMAGE */}
+              <div className="relative rounded-[32px] overflow-hidden shadow-[0_25px_80px_rgba(0,0,0,0.12)]">
 
                 <img
-                  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop"
-                  alt="Биотуалеты"
-                  className="w-full h-[420px] sm:h-[520px] md:h-[760px] object-cover"
+                  src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop"
+                  alt="Экосервис"
+                  className="w-full h-[500px] sm:h-[650px] md:h-[900px] object-cover scale-[1.02]"
                 />
 
                 {/* OVERLAY */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/5 to-transparent" />
+
+                {/* TOP BADGE */}
+                <div className="absolute top-6 left-6 bg-white/85 backdrop-blur-xl border border-white rounded-full px-5 py-3 shadow-lg">
+
+                  <p className="text-sm font-medium tracking-[0.15em] uppercase text-slate-700">
+                    Экосервис • Новосибирск
+                  </p>
+
+                </div>
 
                 {/* FLOATING CARD */}
-                <div className="absolute bottom-6 left-6 right-6 bg-white/80 backdrop-blur-2xl border border-white rounded-[28px] p-5 shadow-2xl">
+                <motion.div
+                  animate={{
+                    y: [0, -8, 0]
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="absolute bottom-6 left-6 right-6"
+                >
 
-                  <div className="flex items-center justify-between gap-5">
+                  <div className="bg-white/88 backdrop-blur-2xl rounded-[28px] p-6 shadow-2xl border border-white/60">
 
-                    <div>
+                    <div className="flex items-center justify-between gap-6">
 
-                      <p className="text-sm text-gray-500 mb-1">
-                        Работаем по Новосибирску
-                      </p>
+                      <div>
 
-                      <h3 className="text-xl font-bold">
-                        Доставка и обслуживание
-                      </h3>
+                        <p className="text-sm text-gray-500 mb-2">
+                          Полный сервис под ключ
+                        </p>
 
-                    </div>
+                        <h3 className="text-2xl font-bold tracking-tight text-slate-950 leading-tight">
 
-                    <div className="w-12 h-12 rounded-2xl bg-slate-950 text-white flex items-center justify-center shadow-xl">
-                      <Truck size={22} />
+                          Доставка,
+                          обслуживание
+                          и поддержка
+
+                        </h3>
+
+                      </div>
+
+                      <div className="min-w-[58px] h-[58px] rounded-2xl bg-slate-950 flex items-center justify-center shadow-xl">
+
+                        <Truck
+                          size={24}
+                          className="text-white"
+                        />
+
+                      </div>
+
                     </div>
 
                   </div>
 
-                </div>
+                </motion.div>
 
               </div>
+
+              {/* SIDE FLOAT */}
+              <motion.div
+                animate={{
+                  y: [0, 10, 0]
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="hidden xl:block absolute -left-12 top-20"
+              >
+
+                <div className="bg-white border border-gray-200 rounded-[28px] px-6 py-5 shadow-xl">
+
+                  <p className="text-sm text-gray-500 mb-1">
+                    Работаем
+                  </p>
+
+                  <h3 className="text-3xl font-bold tracking-tight">
+                    24/7
+                  </h3>
+
+                </div>
+
+              </motion.div>
 
             </motion.div>
 
@@ -353,7 +410,7 @@ export default function HomePage() {
 
             <motion.div
               whileHover={{ y: -10 }}
-              className="bg-white/70 backdrop-blur-2xl border border-white rounded-[36px] p-8 md:p-10 shadow-xl"
+              className="bg-white border border-gray-200 rounded-[32px] p-8 md:p-10"
             >
 
               <div className="w-14 h-14 rounded-2xl bg-green-100 flex items-center justify-center mb-8">
@@ -379,7 +436,7 @@ export default function HomePage() {
 
             <motion.div
               whileHover={{ y: -10 }}
-              className="bg-slate-950 text-white rounded-[36px] p-8 md:p-10 shadow-2xl"
+              className="bg-slate-950 text-white rounded-[32px] p-8 md:p-10"
             >
 
               <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-8">
@@ -405,7 +462,7 @@ export default function HomePage() {
 
             <motion.div
               whileHover={{ y: -10 }}
-              className="bg-white/70 backdrop-blur-2xl border border-white rounded-[36px] p-8 md:p-10 shadow-xl"
+              className="bg-white border border-gray-200 rounded-[32px] p-8 md:p-10"
             >
 
               <div className="w-14 h-14 rounded-2xl bg-green-100 flex items-center justify-center mb-8">
@@ -469,10 +526,8 @@ export default function HomePage() {
 
             <motion.div
               whileHover={{ y: -10 }}
-              className="group bg-white/70 backdrop-blur-2xl border border-white rounded-[36px] p-8 md:p-10 shadow-xl transition-all duration-500"
+              className="bg-white border border-gray-200 rounded-[32px] p-8 md:p-10"
             >
-
-              <div className="w-14 h-14 rounded-2xl bg-green-100 mb-10" />
 
               <h3 className="text-3xl font-bold tracking-tight mb-6">
 
@@ -495,10 +550,8 @@ export default function HomePage() {
 
             <motion.div
               whileHover={{ y: -10 }}
-              className="group bg-slate-950 text-white rounded-[36px] p-8 md:p-10 shadow-2xl transition-all duration-500"
+              className="bg-slate-950 text-white rounded-[32px] p-8 md:p-10"
             >
-
-              <div className="w-14 h-14 rounded-2xl bg-white/10 mb-10" />
 
               <h3 className="text-3xl font-bold tracking-tight mb-6">
                 Обслуживание
@@ -516,10 +569,8 @@ export default function HomePage() {
 
             <motion.div
               whileHover={{ y: -10 }}
-              className="group bg-white/70 backdrop-blur-2xl border border-white rounded-[36px] p-8 md:p-10 shadow-xl transition-all duration-500"
+              className="bg-white border border-gray-200 rounded-[32px] p-8 md:p-10"
             >
-
-              <div className="w-14 h-14 rounded-2xl bg-green-100 mb-10" />
 
               <h3 className="text-3xl font-bold tracking-tight mb-6">
 
@@ -551,58 +602,44 @@ export default function HomePage() {
 
         <div className="max-w-7xl mx-auto px-5 md:px-6">
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="relative overflow-hidden bg-slate-950 rounded-[42px] md:rounded-[56px] p-8 md:p-24 text-white shadow-2xl"
-          >
+          <div className="bg-slate-950 rounded-[42px] md:rounded-[56px] p-8 md:p-24 text-white text-center">
 
-            <div className="absolute top-[-120px] right-[-120px] w-[320px] h-[320px] bg-green-500 rounded-full blur-3xl opacity-20" />
+            <p className="uppercase tracking-[0.3em] text-green-300 text-sm mb-6">
+              Экосервис
+            </p>
 
-            <div className="absolute bottom-[-120px] left-[-120px] w-[320px] h-[320px] bg-emerald-400 rounded-full blur-3xl opacity-20" />
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-[-0.05em] leading-[0.95] mb-8">
 
-            <div className="relative z-10 text-center">
+              Нужны
+              <br />
 
-              <p className="uppercase tracking-[0.3em] text-green-300 text-sm mb-6">
-                Экосервис
-              </p>
+              биотуалеты?
 
-              <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-[-0.05em] leading-[0.95] mb-8">
+            </h2>
 
-                Нужны
-                <br />
+            <p className="text-gray-300 text-lg md:text-2xl leading-relaxed max-w-3xl mx-auto mb-12">
 
-                биотуалеты?
+              Подберём оптимальное решение
+              под ваш объект,
+              мероприятие или бизнес.
 
-              </h2>
+            </p>
 
-              <p className="text-gray-300 text-lg md:text-2xl leading-relaxed max-w-3xl mx-auto mb-12">
+            <button
+              onClick={() => setIsOpen(true)}
+              className="bg-white text-slate-950 hover:bg-gray-100 px-8 md:px-10 py-5 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-[1.02]"
+            >
+              Оставить заявку
+            </button>
 
-                Подберём оптимальное решение
-                под ваш объект,
-                мероприятие или бизнес.
-
-              </p>
-
-              <button
-                onClick={() => setIsOpen(true)}
-                className="bg-white text-slate-950 hover:bg-gray-100 px-8 md:px-10 py-5 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-2xl"
-              >
-                Оставить заявку
-              </button>
-
-            </div>
-
-          </motion.div>
+          </div>
 
         </div>
 
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-gray-200 bg-white/70 backdrop-blur-xl">
+      <footer className="border-t border-gray-200 bg-white">
 
         <div className="max-w-7xl mx-auto px-5 md:px-6 py-16">
 
@@ -633,21 +670,10 @@ export default function HomePage() {
 
               <div className="flex flex-col gap-4 text-gray-600 text-lg">
 
-                <Link href="/" className="hover:text-black transition">
-                  Главная
-                </Link>
-
-                <Link href="/services" className="hover:text-black transition">
-                  Услуги
-                </Link>
-
-                <Link href="/prices" className="hover:text-black transition">
-                  Цены
-                </Link>
-
-                <Link href="/contacts" className="hover:text-black transition">
-                  Контакты
-                </Link>
+                <Link href="/">Главная</Link>
+                <Link href="/services">Услуги</Link>
+                <Link href="/prices">Цены</Link>
+                <Link href="/contacts">Контакты</Link>
 
               </div>
 
@@ -661,17 +687,9 @@ export default function HomePage() {
 
               <div className="flex flex-col gap-4 text-gray-600 text-lg">
 
-                <p>
-                  +7 (383) 319-40-21
-                </p>
-
-                <p>
-                  Новосибирск
-                </p>
-
-                <p>
-                  Советская ул., 64/1
-                </p>
+                <p>+7 (383) 319-40-21</p>
+                <p>Новосибирск</p>
+                <p>Советская ул., 64/1</p>
 
               </div>
 
@@ -751,7 +769,7 @@ export default function HomePage() {
                 />
 
                 <button
-                  className="w-full bg-slate-950 hover:bg-black text-white py-4 rounded-2xl font-semibold transition-all duration-300 hover:scale-[1.01]"
+                  className="w-full bg-slate-950 hover:bg-black text-white py-4 rounded-2xl font-semibold"
                 >
                   Отправить
                 </button>
