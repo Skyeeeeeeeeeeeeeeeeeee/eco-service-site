@@ -6,7 +6,8 @@ import { useState } from "react"
 import {
   ShieldCheck,
   Truck,
-  Sparkles
+ Sparkles,
+  ArrowRight
 } from "lucide-react"
 
 export default function HomePage() {
@@ -15,10 +16,10 @@ export default function HomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <main className="min-h-screen bg-[#f5f5f5] text-slate-900 overflow-hidden relative">
+    <main className="min-h-screen bg-[#f5f5f5] text-slate-900 overflow-hidden">
 
       {/* HEADER */}
-      <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/70 border-b border-white/40">
+      <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/80 border-b border-gray-200">
 
         <div className="max-w-7xl mx-auto px-5 md:px-6 py-5 flex items-center justify-between">
 
@@ -71,7 +72,7 @@ export default function HomePage() {
           {/* BUTTON */}
           <button
             onClick={() => setIsOpen(true)}
-            className="hidden md:flex bg-slate-950 hover:bg-black text-white px-6 py-3 rounded-2xl text-sm font-semibold transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-xl"
+            className="hidden md:flex bg-slate-950 hover:bg-black text-white px-6 py-3 rounded-2xl text-sm font-semibold transition-all duration-300 hover:scale-[1.02]"
           >
             Оставить заявку
           </button>
@@ -175,53 +176,64 @@ export default function HomePage() {
       <section className="relative overflow-hidden">
 
         {/* BACKGROUND */}
-        <div className="absolute top-[-250px] right-[-200px] w-[600px] h-[600px] bg-green-200 rounded-full blur-3xl opacity-20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-[#f7f7f7] to-[#f5f5f5]" />
 
-        <div className="absolute bottom-[-250px] left-[-200px] w-[500px] h-[500px] bg-emerald-100 rounded-full blur-3xl opacity-20" />
+        <div className="max-w-7xl mx-auto px-5 md:px-6 pt-12 md:pt-20 pb-24 md:pb-36 relative z-10">
 
-        <div className="max-w-7xl mx-auto px-5 md:px-6 pt-16 md:pt-28 pb-20 md:pb-32 relative z-10">
+          {/* LABEL */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-10"
+          >
 
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-16 items-center">
+            <div className="inline-flex items-center gap-3 border border-gray-200 bg-white rounded-full px-5 py-3">
+
+              <div className="w-2 h-2 rounded-full bg-green-600" />
+
+              <p className="text-sm tracking-[0.18em] uppercase text-gray-600 font-medium">
+                Экосервис • Новосибирск
+              </p>
+
+            </div>
+
+          </motion.div>
+
+          {/* MAIN GRID */}
+          <div className="grid grid-cols-1 xl:grid-cols-[0.95fr_1.05fr] gap-12 items-end">
 
             {/* LEFT */}
             <motion.div
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
 
-              {/* LABEL */}
-              <div className="inline-flex items-center gap-3 bg-white border border-gray-200 rounded-full px-5 py-3 shadow-sm mb-8">
-
-                <div className="w-2 h-2 rounded-full bg-green-600" />
-
-                <p className="text-sm tracking-[0.2em] font-medium text-gray-600 uppercase">
-                  Экосервис Новосибирск
-                </p>
-
-              </div>
-
               {/* TITLE */}
-              <h1 className="text-[46px] sm:text-[64px] md:text-[92px] leading-[0.9] tracking-[-0.06em] font-bold text-slate-950 mb-8">
+              <h1 className="text-[52px] sm:text-[74px] md:text-[110px] leading-[0.88] tracking-[-0.07em] font-bold text-slate-950 mb-10">
 
                 Аренда
                 <br />
 
-                современных
+                биотуалетов
                 <br />
 
-                биотуалетов
+                нового
+                <br />
+
+                поколения
 
               </h1>
 
               {/* DESCRIPTION */}
-              <p className="text-gray-600 text-lg md:text-2xl leading-relaxed max-w-2xl mb-12">
+              <p className="text-gray-600 text-xl md:text-2xl leading-relaxed max-w-2xl mb-14">
 
-                Решения для стройки,
-                мероприятий и бизнеса.
                 Доставка, обслуживание
-                и поддержка по Новосибирску
-                и области.
+                и аренда современных
+                санитарных кабин
+                для стройки,
+                мероприятий и бизнеса.
 
               </p>
 
@@ -230,14 +242,14 @@ export default function HomePage() {
 
                 <button
                   onClick={() => setIsOpen(true)}
-                  className="bg-slate-950 hover:bg-black text-white px-8 py-5 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-xl"
+                  className="bg-slate-950 hover:bg-black text-white px-8 py-5 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-[1.02]"
                 >
                   Оставить заявку
                 </button>
 
                 <Link
                   href="/services"
-                  className="bg-white border border-gray-200 hover:border-slate-400 px-8 py-5 rounded-2xl text-lg font-medium transition-all duration-300 text-center"
+                  className="border border-gray-300 hover:border-black bg-white px-8 py-5 rounded-2xl text-lg font-medium transition-all duration-300 text-center"
                 >
                   Смотреть услуги
                 </Link>
@@ -245,40 +257,40 @@ export default function HomePage() {
               </div>
 
               {/* STATS */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="flex flex-wrap gap-10">
 
-                <div className="bg-white border border-gray-200 rounded-[28px] p-6">
+                <div>
 
-                  <h3 className="text-4xl font-bold mb-2">
+                  <h3 className="text-5xl font-bold tracking-tight mb-2">
                     5+
                   </h3>
 
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-500 text-lg">
                     лет опыта
                   </p>
 
                 </div>
 
-                <div className="bg-white border border-gray-200 rounded-[28px] p-6">
+                <div>
 
-                  <h3 className="text-4xl font-bold mb-2">
+                  <h3 className="text-5xl font-bold tracking-tight mb-2">
                     1000+
                   </h3>
 
-                  <p className="text-gray-600 leading-relaxed">
-                    объектов обслужено
+                  <p className="text-gray-500 text-lg">
+                    объектов
                   </p>
 
                 </div>
 
-                <div className="bg-white border border-gray-200 rounded-[28px] p-6">
+                <div>
 
-                  <h3 className="text-4xl font-bold mb-2">
+                  <h3 className="text-5xl font-bold tracking-tight mb-2">
                     24/7
                   </h3>
 
-                  <p className="text-gray-600 leading-relaxed">
-                    поддержка клиентов
+                  <p className="text-gray-500 text-lg">
+                    поддержка
                   </p>
 
                 </div>
@@ -295,26 +307,17 @@ export default function HomePage() {
               className="relative"
             >
 
-              {/* MAIN IMAGE */}
-              <div className="relative rounded-[32px] overflow-hidden shadow-[0_25px_80px_rgba(0,0,0,0.12)]">
+              {/* IMAGE */}
+              <div className="relative overflow-hidden rounded-[36px]">
 
                 <img
-                  src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop"
+                  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1800&auto=format&fit=crop"
                   alt="Экосервис"
-                  className="w-full h-[500px] sm:h-[650px] md:h-[900px] object-cover scale-[1.02]"
+                  className="w-full h-[520px] sm:h-[720px] md:h-[920px] object-cover"
                 />
 
                 {/* OVERLAY */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/5 to-transparent" />
-
-                {/* TOP BADGE */}
-                <div className="absolute top-6 left-6 bg-white/85 backdrop-blur-xl border border-white rounded-full px-5 py-3 shadow-lg">
-
-                  <p className="text-sm font-medium tracking-[0.15em] uppercase text-slate-700">
-                    Экосервис • Новосибирск
-                  </p>
-
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
 
                 {/* FLOATING CARD */}
                 <motion.div
@@ -326,32 +329,28 @@ export default function HomePage() {
                     repeat: Infinity,
                     ease: "easeInOut"
                   }}
-                  className="absolute bottom-6 left-6 right-6"
+                  className="absolute left-6 right-6 bottom-6"
                 >
 
-                  <div className="bg-white/88 backdrop-blur-2xl rounded-[28px] p-6 shadow-2xl border border-white/60">
+                  <div className="bg-white rounded-[28px] px-6 py-5 shadow-[0_10px_40px_rgba(0,0,0,0.08)]">
 
                     <div className="flex items-center justify-between gap-6">
 
                       <div>
 
-                        <p className="text-sm text-gray-500 mb-2">
-                          Полный сервис под ключ
+                        <p className="text-sm text-gray-500 mb-1">
+                          Полный сервис
                         </p>
 
-                        <h3 className="text-2xl font-bold tracking-tight text-slate-950 leading-tight">
-
-                          Доставка,
-                          обслуживание
-                          и поддержка
-
+                        <h3 className="text-2xl font-bold tracking-tight">
+                          Доставка и обслуживание
                         </h3>
 
                       </div>
 
-                      <div className="min-w-[58px] h-[58px] rounded-2xl bg-slate-950 flex items-center justify-center shadow-xl">
+                      <div className="w-14 h-14 rounded-2xl bg-slate-950 flex items-center justify-center">
 
-                        <Truck
+                        <ArrowRight
                           size={24}
                           className="text-white"
                         />
@@ -366,33 +365,6 @@ export default function HomePage() {
 
               </div>
 
-              {/* SIDE FLOAT */}
-              <motion.div
-                animate={{
-                  y: [0, 10, 0]
-                }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="hidden xl:block absolute -left-12 top-20"
-              >
-
-                <div className="bg-white border border-gray-200 rounded-[28px] px-6 py-5 shadow-xl">
-
-                  <p className="text-sm text-gray-500 mb-1">
-                    Работаем
-                  </p>
-
-                  <h3 className="text-3xl font-bold tracking-tight">
-                    24/7
-                  </h3>
-
-                </div>
-
-              </motion.div>
-
             </motion.div>
 
           </div>
@@ -402,15 +374,16 @@ export default function HomePage() {
       </section>
 
       {/* FEATURES */}
-      <section className="pb-20 md:pb-28">
+      <section className="pb-24 md:pb-32">
 
         <div className="max-w-7xl mx-auto px-5 md:px-6">
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
+            {/* CARD */}
             <motion.div
-              whileHover={{ y: -10 }}
-              className="bg-white border border-gray-200 rounded-[32px] p-8 md:p-10"
+              whileHover={{ y: -6 }}
+              className="bg-white rounded-[32px] p-8 md:p-10 border border-gray-200 hover:shadow-xl transition-all duration-300"
             >
 
               <div className="w-14 h-14 rounded-2xl bg-green-100 flex items-center justify-center mb-8">
@@ -427,16 +400,17 @@ export default function HomePage() {
               </h3>
 
               <p className="text-gray-600 text-lg leading-relaxed">
-                Регулярное обслуживание
-                и качественные кабины
-                для любых задач.
+                Современные кабины
+                и регулярное обслуживание
+                для любых объектов.
               </p>
 
             </motion.div>
 
+            {/* CARD */}
             <motion.div
-              whileHover={{ y: -10 }}
-              className="bg-slate-950 text-white rounded-[32px] p-8 md:p-10"
+              whileHover={{ y: -6 }}
+              className="bg-slate-950 text-white rounded-[32px] p-8 md:p-10 hover:shadow-2xl transition-all duration-300"
             >
 
               <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-8">
@@ -460,9 +434,10 @@ export default function HomePage() {
 
             </motion.div>
 
+            {/* CARD */}
             <motion.div
-              whileHover={{ y: -10 }}
-              className="bg-white border border-gray-200 rounded-[32px] p-8 md:p-10"
+              whileHover={{ y: -6 }}
+              className="bg-white rounded-[32px] p-8 md:p-10 border border-gray-200 hover:shadow-xl transition-all duration-300"
             >
 
               <div className="w-14 h-14 rounded-2xl bg-green-100 flex items-center justify-center mb-8">
@@ -479,9 +454,9 @@ export default function HomePage() {
               </h3>
 
               <p className="text-gray-600 text-lg leading-relaxed">
-                Современное обслуживание,
-                дезинфекция
-                и контроль качества.
+                Дезинфекция,
+                контроль качества
+                и постоянный сервис.
               </p>
 
             </motion.div>
@@ -493,11 +468,12 @@ export default function HomePage() {
       </section>
 
       {/* SERVICES */}
-      <section className="py-24 md:py-32">
+      <section className="py-24 md:py-32 bg-white">
 
         <div className="max-w-7xl mx-auto px-5 md:px-6">
 
-          <div className="max-w-4xl mb-16">
+          {/* TOP */}
+          <div className="max-w-4xl mb-20">
 
             <p className="uppercase tracking-[0.25em] text-sm text-gray-500 mb-5">
               Наши услуги
@@ -522,12 +498,18 @@ export default function HomePage() {
 
           </div>
 
+          {/* GRID */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
+            {/* CARD */}
             <motion.div
-              whileHover={{ y: -10 }}
-              className="bg-white border border-gray-200 rounded-[32px] p-8 md:p-10"
+              whileHover={{ y: -6 }}
+              className="border border-gray-200 rounded-[32px] p-8 md:p-10 hover:shadow-xl transition-all duration-300"
             >
+
+              <p className="text-sm uppercase tracking-[0.2em] text-gray-400 mb-8">
+                01
+              </p>
 
               <h3 className="text-3xl font-bold tracking-tight mb-6">
 
@@ -548,10 +530,15 @@ export default function HomePage() {
 
             </motion.div>
 
+            {/* CARD */}
             <motion.div
-              whileHover={{ y: -10 }}
-              className="bg-slate-950 text-white rounded-[32px] p-8 md:p-10"
+              whileHover={{ y: -6 }}
+              className="bg-slate-950 text-white rounded-[32px] p-8 md:p-10 hover:shadow-2xl transition-all duration-300"
             >
+
+              <p className="text-sm uppercase tracking-[0.2em] text-gray-500 mb-8">
+                02
+              </p>
 
               <h3 className="text-3xl font-bold tracking-tight mb-6">
                 Обслуживание
@@ -567,10 +554,15 @@ export default function HomePage() {
 
             </motion.div>
 
+            {/* CARD */}
             <motion.div
-              whileHover={{ y: -10 }}
-              className="bg-white border border-gray-200 rounded-[32px] p-8 md:p-10"
+              whileHover={{ y: -6 }}
+              className="border border-gray-200 rounded-[32px] p-8 md:p-10 hover:shadow-xl transition-all duration-300"
             >
+
+              <p className="text-sm uppercase tracking-[0.2em] text-gray-400 mb-8">
+                03
+              </p>
 
               <h3 className="text-3xl font-bold tracking-tight mb-6">
 
@@ -598,7 +590,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="pb-24 md:pb-32">
+      <section className="py-24 md:py-32">
 
         <div className="max-w-7xl mx-auto px-5 md:px-6">
 
@@ -645,6 +637,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
 
+            {/* LEFT */}
             <div>
 
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-5">
@@ -662,6 +655,7 @@ export default function HomePage() {
 
             </div>
 
+            {/* NAV */}
             <div>
 
               <h3 className="text-xl font-bold mb-6">
@@ -670,15 +664,27 @@ export default function HomePage() {
 
               <div className="flex flex-col gap-4 text-gray-600 text-lg">
 
-                <Link href="/">Главная</Link>
-                <Link href="/services">Услуги</Link>
-                <Link href="/prices">Цены</Link>
-                <Link href="/contacts">Контакты</Link>
+                <Link href="/" className="hover:text-black transition">
+                  Главная
+                </Link>
+
+                <Link href="/services" className="hover:text-black transition">
+                  Услуги
+                </Link>
+
+                <Link href="/prices" className="hover:text-black transition">
+                  Цены
+                </Link>
+
+                <Link href="/contacts" className="hover:text-black transition">
+                  Контакты
+                </Link>
 
               </div>
 
             </div>
 
+            {/* CONTACTS */}
             <div>
 
               <h3 className="text-xl font-bold mb-6">
@@ -688,7 +694,9 @@ export default function HomePage() {
               <div className="flex flex-col gap-4 text-gray-600 text-lg">
 
                 <p>+7 (383) 319-40-21</p>
+
                 <p>Новосибирск</p>
+
                 <p>Советская ул., 64/1</p>
 
               </div>
@@ -734,6 +742,7 @@ export default function HomePage() {
               className="relative bg-white rounded-[36px] p-6 md:p-8 w-full max-w-md shadow-2xl"
             >
 
+              {/* CLOSE */}
               <button
                 onClick={() => setIsOpen(false)}
                 className="absolute top-5 right-5 text-3xl text-gray-400 hover:text-black transition"
@@ -769,7 +778,7 @@ export default function HomePage() {
                 />
 
                 <button
-                  className="w-full bg-slate-950 hover:bg-black text-white py-4 rounded-2xl font-semibold"
+                  className="w-full bg-slate-950 hover:bg-black text-white py-4 rounded-2xl font-semibold transition-all duration-300"
                 >
                   Отправить
                 </button>
