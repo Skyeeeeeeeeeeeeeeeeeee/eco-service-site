@@ -6,8 +6,7 @@ import { useState } from "react"
 import {
   ShieldCheck,
   Truck,
- Sparkles,
-  ArrowRight
+  Sparkles
 } from "lucide-react"
 
 export default function HomePage() {
@@ -16,10 +15,13 @@ export default function HomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <main className="min-h-screen bg-[#f5f5f5] text-slate-900 overflow-hidden">
+    <main className="min-h-screen bg-[#f5f5f5] text-slate-900 overflow-hidden relative">
+
+      {/* GRAIN */}
+      <div className="pointer-events-none fixed inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
 
       {/* HEADER */}
-      <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/80 border-b border-gray-200">
+      <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/70 border-b border-white/40">
 
         <div className="max-w-7xl mx-auto px-5 md:px-6 py-5 flex items-center justify-between">
 
@@ -72,7 +74,7 @@ export default function HomePage() {
           {/* BUTTON */}
           <button
             onClick={() => setIsOpen(true)}
-            className="hidden md:flex bg-slate-950 hover:bg-black text-white px-6 py-3 rounded-2xl text-sm font-semibold transition-all duration-300 hover:scale-[1.02]"
+            className="hidden md:flex bg-slate-950 hover:bg-black text-white px-6 py-3 rounded-2xl text-sm font-semibold transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-xl"
           >
             Оставить заявку
           </button>
@@ -175,65 +177,54 @@ export default function HomePage() {
       {/* HERO */}
       <section className="relative overflow-hidden">
 
-        {/* BACKGROUND */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-[#f7f7f7] to-[#f5f5f5]" />
+        {/* BLURS */}
+        <div className="absolute top-[-250px] right-[-200px] w-[600px] h-[600px] bg-green-200 rounded-full blur-3xl opacity-30" />
 
-        <div className="max-w-7xl mx-auto px-5 md:px-6 pt-12 md:pt-20 pb-24 md:pb-36 relative z-10">
+        <div className="absolute bottom-[-250px] left-[-200px] w-[500px] h-[500px] bg-emerald-100 rounded-full blur-3xl opacity-30" />
 
-          {/* LABEL */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-10"
-          >
+        <div className="max-w-7xl mx-auto px-5 md:px-6 pt-16 md:pt-28 pb-20 md:pb-32 relative z-10">
 
-            <div className="inline-flex items-center gap-3 border border-gray-200 bg-white rounded-full px-5 py-3">
-
-              <div className="w-2 h-2 rounded-full bg-green-600" />
-
-              <p className="text-sm tracking-[0.18em] uppercase text-gray-600 font-medium">
-                Экосервис • Новосибирск
-              </p>
-
-            </div>
-
-          </motion.div>
-
-          {/* MAIN GRID */}
-          <div className="grid grid-cols-1 xl:grid-cols-[0.95fr_1.05fr] gap-12 items-end">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-14 items-center">
 
             {/* LEFT */}
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
 
+              {/* LABEL */}
+              <div className="inline-flex items-center gap-3 bg-white/90 backdrop-blur-xl border border-white rounded-full px-5 py-3 shadow-lg mb-8">
+
+                <div className="w-2 h-2 rounded-full bg-green-600" />
+
+                <p className="text-sm tracking-[0.2em] font-medium text-gray-600 uppercase">
+                  Экосервис Новосибирск
+                </p>
+
+              </div>
+
               {/* TITLE */}
-              <h1 className="text-[52px] sm:text-[74px] md:text-[110px] leading-[0.88] tracking-[-0.07em] font-bold text-slate-950 mb-10">
+              <h1 className="text-[46px] sm:text-[62px] md:text-[88px] leading-[0.92] tracking-[-0.05em] font-bold text-slate-950 mb-8">
 
                 Аренда
                 <br />
 
+                современных
+                <br />
+
                 биотуалетов
-                <br />
-
-                нового
-                <br />
-
-                поколения
 
               </h1>
 
               {/* DESCRIPTION */}
-              <p className="text-gray-600 text-xl md:text-2xl leading-relaxed max-w-2xl mb-14">
+              <p className="text-gray-600 text-lg md:text-2xl leading-relaxed max-w-2xl mb-12">
 
-                Доставка, обслуживание
-                и аренда современных
-                санитарных кабин
-                для стройки,
+                Решения для стройки,
                 мероприятий и бизнеса.
+                Доставка, обслуживание
+                и поддержка по Новосибирску
+                и области.
 
               </p>
 
@@ -242,14 +233,14 @@ export default function HomePage() {
 
                 <button
                   onClick={() => setIsOpen(true)}
-                  className="bg-slate-950 hover:bg-black text-white px-8 py-5 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-[1.02]"
+                  className="bg-slate-950 hover:bg-black text-white px-8 py-5 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-2xl"
                 >
                   Оставить заявку
                 </button>
 
                 <Link
                   href="/services"
-                  className="border border-gray-300 hover:border-black bg-white px-8 py-5 rounded-2xl text-lg font-medium transition-all duration-300 text-center"
+                  className="bg-white/80 backdrop-blur-xl border border-white hover:border-slate-300 px-8 py-5 rounded-2xl text-lg font-medium transition-all duration-300 text-center shadow-lg"
                 >
                   Смотреть услуги
                 </Link>
@@ -257,40 +248,40 @@ export default function HomePage() {
               </div>
 
               {/* STATS */}
-              <div className="flex flex-wrap gap-10">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
 
-                <div>
+                <div className="bg-white/70 backdrop-blur-2xl border border-white rounded-[28px] p-6 shadow-xl">
 
-                  <h3 className="text-5xl font-bold tracking-tight mb-2">
+                  <h3 className="text-4xl font-bold mb-2">
                     5+
                   </h3>
 
-                  <p className="text-gray-500 text-lg">
+                  <p className="text-gray-600 leading-relaxed">
                     лет опыта
                   </p>
 
                 </div>
 
-                <div>
+                <div className="bg-white/70 backdrop-blur-2xl border border-white rounded-[28px] p-6 shadow-xl">
 
-                  <h3 className="text-5xl font-bold tracking-tight mb-2">
+                  <h3 className="text-4xl font-bold mb-2">
                     1000+
                   </h3>
 
-                  <p className="text-gray-500 text-lg">
-                    объектов
+                  <p className="text-gray-600 leading-relaxed">
+                    объектов обслужено
                   </p>
 
                 </div>
 
-                <div>
+                <div className="bg-white/70 backdrop-blur-2xl border border-white rounded-[28px] p-6 shadow-xl">
 
-                  <h3 className="text-5xl font-bold tracking-tight mb-2">
+                  <h3 className="text-4xl font-bold mb-2">
                     24/7
                   </h3>
 
-                  <p className="text-gray-500 text-lg">
-                    поддержка
+                  <p className="text-gray-600 leading-relaxed">
+                    поддержка клиентов
                   </p>
 
                 </div>
@@ -301,67 +292,47 @@ export default function HomePage() {
 
             {/* RIGHT */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
+              initial={{ opacity: 0, scale: 0.92 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.9 }}
+              transition={{ duration: 0.8 }}
               className="relative"
             >
 
-              {/* IMAGE */}
-              <div className="relative overflow-hidden rounded-[36px]">
+              <div className="relative rounded-[42px] overflow-hidden shadow-2xl">
 
                 <img
-                  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1800&auto=format&fit=crop"
-                  alt="Экосервис"
-                  className="w-full h-[520px] sm:h-[720px] md:h-[920px] object-cover"
+                  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop"
+                  alt="Биотуалеты"
+                  className="w-full h-[420px] sm:h-[520px] md:h-[760px] object-cover"
                 />
 
                 {/* OVERLAY */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
 
                 {/* FLOATING CARD */}
-                <motion.div
-                  animate={{
-                    y: [0, -8, 0]
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  className="absolute left-6 right-6 bottom-6"
-                >
+                <div className="absolute bottom-6 left-6 right-6 bg-white/80 backdrop-blur-2xl border border-white rounded-[28px] p-5 shadow-2xl">
 
-                  <div className="bg-white rounded-[28px] px-6 py-5 shadow-[0_10px_40px_rgba(0,0,0,0.08)]">
+                  <div className="flex items-center justify-between gap-5">
 
-                    <div className="flex items-center justify-between gap-6">
+                    <div>
 
-                      <div>
+                      <p className="text-sm text-gray-500 mb-1">
+                        Работаем по Новосибирску
+                      </p>
 
-                        <p className="text-sm text-gray-500 mb-1">
-                          Полный сервис
-                        </p>
+                      <h3 className="text-xl font-bold">
+                        Доставка и обслуживание
+                      </h3>
 
-                        <h3 className="text-2xl font-bold tracking-tight">
-                          Доставка и обслуживание
-                        </h3>
+                    </div>
 
-                      </div>
-
-                      <div className="w-14 h-14 rounded-2xl bg-slate-950 flex items-center justify-center">
-
-                        <ArrowRight
-                          size={24}
-                          className="text-white"
-                        />
-
-                      </div>
-
+                    <div className="w-12 h-12 rounded-2xl bg-slate-950 text-white flex items-center justify-center shadow-xl">
+                      <Truck size={22} />
                     </div>
 
                   </div>
 
-                </motion.div>
+                </div>
 
               </div>
 
@@ -374,16 +345,15 @@ export default function HomePage() {
       </section>
 
       {/* FEATURES */}
-      <section className="pb-24 md:pb-32">
+      <section className="pb-20 md:pb-28">
 
         <div className="max-w-7xl mx-auto px-5 md:px-6">
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-            {/* CARD */}
             <motion.div
-              whileHover={{ y: -6 }}
-              className="bg-white rounded-[32px] p-8 md:p-10 border border-gray-200 hover:shadow-xl transition-all duration-300"
+              whileHover={{ y: -10 }}
+              className="bg-white/70 backdrop-blur-2xl border border-white rounded-[36px] p-8 md:p-10 shadow-xl"
             >
 
               <div className="w-14 h-14 rounded-2xl bg-green-100 flex items-center justify-center mb-8">
@@ -400,17 +370,16 @@ export default function HomePage() {
               </h3>
 
               <p className="text-gray-600 text-lg leading-relaxed">
-                Современные кабины
-                и регулярное обслуживание
-                для любых объектов.
+                Регулярное обслуживание
+                и качественные кабины
+                для любых задач.
               </p>
 
             </motion.div>
 
-            {/* CARD */}
             <motion.div
-              whileHover={{ y: -6 }}
-              className="bg-slate-950 text-white rounded-[32px] p-8 md:p-10 hover:shadow-2xl transition-all duration-300"
+              whileHover={{ y: -10 }}
+              className="bg-slate-950 text-white rounded-[36px] p-8 md:p-10 shadow-2xl"
             >
 
               <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-8">
@@ -434,10 +403,9 @@ export default function HomePage() {
 
             </motion.div>
 
-            {/* CARD */}
             <motion.div
-              whileHover={{ y: -6 }}
-              className="bg-white rounded-[32px] p-8 md:p-10 border border-gray-200 hover:shadow-xl transition-all duration-300"
+              whileHover={{ y: -10 }}
+              className="bg-white/70 backdrop-blur-2xl border border-white rounded-[36px] p-8 md:p-10 shadow-xl"
             >
 
               <div className="w-14 h-14 rounded-2xl bg-green-100 flex items-center justify-center mb-8">
@@ -454,9 +422,9 @@ export default function HomePage() {
               </h3>
 
               <p className="text-gray-600 text-lg leading-relaxed">
-                Дезинфекция,
-                контроль качества
-                и постоянный сервис.
+                Современное обслуживание,
+                дезинфекция
+                и контроль качества.
               </p>
 
             </motion.div>
@@ -468,12 +436,11 @@ export default function HomePage() {
       </section>
 
       {/* SERVICES */}
-      <section className="py-24 md:py-32 bg-white">
+      <section className="py-24 md:py-32">
 
         <div className="max-w-7xl mx-auto px-5 md:px-6">
 
-          {/* TOP */}
-          <div className="max-w-4xl mb-20">
+          <div className="max-w-4xl mb-16">
 
             <p className="uppercase tracking-[0.25em] text-sm text-gray-500 mb-5">
               Наши услуги
@@ -498,18 +465,14 @@ export default function HomePage() {
 
           </div>
 
-          {/* GRID */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-            {/* CARD */}
             <motion.div
-              whileHover={{ y: -6 }}
-              className="border border-gray-200 rounded-[32px] p-8 md:p-10 hover:shadow-xl transition-all duration-300"
+              whileHover={{ y: -10 }}
+              className="group bg-white/70 backdrop-blur-2xl border border-white rounded-[36px] p-8 md:p-10 shadow-xl transition-all duration-500"
             >
 
-              <p className="text-sm uppercase tracking-[0.2em] text-gray-400 mb-8">
-                01
-              </p>
+              <div className="w-14 h-14 rounded-2xl bg-green-100 mb-10" />
 
               <h3 className="text-3xl font-bold tracking-tight mb-6">
 
@@ -530,15 +493,12 @@ export default function HomePage() {
 
             </motion.div>
 
-            {/* CARD */}
             <motion.div
-              whileHover={{ y: -6 }}
-              className="bg-slate-950 text-white rounded-[32px] p-8 md:p-10 hover:shadow-2xl transition-all duration-300"
+              whileHover={{ y: -10 }}
+              className="group bg-slate-950 text-white rounded-[36px] p-8 md:p-10 shadow-2xl transition-all duration-500"
             >
 
-              <p className="text-sm uppercase tracking-[0.2em] text-gray-500 mb-8">
-                02
-              </p>
+              <div className="w-14 h-14 rounded-2xl bg-white/10 mb-10" />
 
               <h3 className="text-3xl font-bold tracking-tight mb-6">
                 Обслуживание
@@ -554,15 +514,12 @@ export default function HomePage() {
 
             </motion.div>
 
-            {/* CARD */}
             <motion.div
-              whileHover={{ y: -6 }}
-              className="border border-gray-200 rounded-[32px] p-8 md:p-10 hover:shadow-xl transition-all duration-300"
+              whileHover={{ y: -10 }}
+              className="group bg-white/70 backdrop-blur-2xl border border-white rounded-[36px] p-8 md:p-10 shadow-xl transition-all duration-500"
             >
 
-              <p className="text-sm uppercase tracking-[0.2em] text-gray-400 mb-8">
-                03
-              </p>
+              <div className="w-14 h-14 rounded-2xl bg-green-100 mb-10" />
 
               <h3 className="text-3xl font-bold tracking-tight mb-6">
 
@@ -590,54 +547,67 @@ export default function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 md:py-32">
+      <section className="pb-24 md:pb-32">
 
         <div className="max-w-7xl mx-auto px-5 md:px-6">
 
-          <div className="bg-slate-950 rounded-[42px] md:rounded-[56px] p-8 md:p-24 text-white text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="relative overflow-hidden bg-slate-950 rounded-[42px] md:rounded-[56px] p-8 md:p-24 text-white shadow-2xl"
+          >
 
-            <p className="uppercase tracking-[0.3em] text-green-300 text-sm mb-6">
-              Экосервис
-            </p>
+            <div className="absolute top-[-120px] right-[-120px] w-[320px] h-[320px] bg-green-500 rounded-full blur-3xl opacity-20" />
 
-            <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-[-0.05em] leading-[0.95] mb-8">
+            <div className="absolute bottom-[-120px] left-[-120px] w-[320px] h-[320px] bg-emerald-400 rounded-full blur-3xl opacity-20" />
 
-              Нужны
-              <br />
+            <div className="relative z-10 text-center">
 
-              биотуалеты?
+              <p className="uppercase tracking-[0.3em] text-green-300 text-sm mb-6">
+                Экосервис
+              </p>
 
-            </h2>
+              <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-[-0.05em] leading-[0.95] mb-8">
 
-            <p className="text-gray-300 text-lg md:text-2xl leading-relaxed max-w-3xl mx-auto mb-12">
+                Нужны
+                <br />
 
-              Подберём оптимальное решение
-              под ваш объект,
-              мероприятие или бизнес.
+                биотуалеты?
 
-            </p>
+              </h2>
 
-            <button
-              onClick={() => setIsOpen(true)}
-              className="bg-white text-slate-950 hover:bg-gray-100 px-8 md:px-10 py-5 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-[1.02]"
-            >
-              Оставить заявку
-            </button>
+              <p className="text-gray-300 text-lg md:text-2xl leading-relaxed max-w-3xl mx-auto mb-12">
 
-          </div>
+                Подберём оптимальное решение
+                под ваш объект,
+                мероприятие или бизнес.
+
+              </p>
+
+              <button
+                onClick={() => setIsOpen(true)}
+                className="bg-white text-slate-950 hover:bg-gray-100 px-8 md:px-10 py-5 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-2xl"
+              >
+                Оставить заявку
+              </button>
+
+            </div>
+
+          </motion.div>
 
         </div>
 
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-gray-200 bg-white">
+      <footer className="border-t border-gray-200 bg-white/70 backdrop-blur-xl">
 
         <div className="max-w-7xl mx-auto px-5 md:px-6 py-16">
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
 
-            {/* LEFT */}
             <div>
 
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-5">
@@ -655,7 +625,6 @@ export default function HomePage() {
 
             </div>
 
-            {/* NAV */}
             <div>
 
               <h3 className="text-xl font-bold mb-6">
@@ -684,7 +653,6 @@ export default function HomePage() {
 
             </div>
 
-            {/* CONTACTS */}
             <div>
 
               <h3 className="text-xl font-bold mb-6">
@@ -693,11 +661,17 @@ export default function HomePage() {
 
               <div className="flex flex-col gap-4 text-gray-600 text-lg">
 
-                <p>+7 (383) 319-40-21</p>
+                <p>
+                  +7 (383) 319-40-21
+                </p>
 
-                <p>Новосибирск</p>
+                <p>
+                  Новосибирск
+                </p>
 
-                <p>Советская ул., 64/1</p>
+                <p>
+                  Советская ул., 64/1
+                </p>
 
               </div>
 
@@ -742,7 +716,6 @@ export default function HomePage() {
               className="relative bg-white rounded-[36px] p-6 md:p-8 w-full max-w-md shadow-2xl"
             >
 
-              {/* CLOSE */}
               <button
                 onClick={() => setIsOpen(false)}
                 className="absolute top-5 right-5 text-3xl text-gray-400 hover:text-black transition"
@@ -778,7 +751,7 @@ export default function HomePage() {
                 />
 
                 <button
-                  className="w-full bg-slate-950 hover:bg-black text-white py-4 rounded-2xl font-semibold transition-all duration-300"
+                  className="w-full bg-slate-950 hover:bg-black text-white py-4 rounded-2xl font-semibold transition-all duration-300 hover:scale-[1.01]"
                 >
                   Отправить
                 </button>
